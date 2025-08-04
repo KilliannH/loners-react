@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import GooglePlaceAutocomplete from "../components/GooglePlaceInput";
 import GooglePlacesInput from "../components/GooglePlaceInput";
 
 const CreateEvent = () => {
@@ -13,9 +12,9 @@ const CreateEvent = () => {
     date: "",
     locationId: "",
   });
-  const [showLocationForm, setShowLocationForm] = useState(false);
   const [newAddress, setNewAddress] = useState("");
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
+  const [showLocationForm, setShowLocationForm] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [locationSuggestions, setLocationSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -104,85 +103,53 @@ const CreateEvent = () => {
 
         {/* Autocomplete Google Places */}
         <GooglePlacesInput
-          onSelect={(place) => {
+          onSelect={async (place) => {
             setSearchQuery(place.name);
             setNewAddress(place.address);
             setCoordinates(place.coordinates);
-            toast.success("Lieu sélectionné");
+
+            try {
+              // 🔁 Vérifie s’il existe déjà
+              const res = await api.get(`/locations?query=${encodeURIComponent(place.name)}`);
+              const match = res.data.find((loc) => loc.address === place.address);
+
+              if (match) {
+                setForm((prev) => ({ ...prev, locationId: match._id }));
+                toast.success("Lieu existant sélectionné ✅");
+              } else {
+                // ✅ Crée le lieu dans le back
+                const created = await api.post("/locations", {
+                  name: place.name,
+                  address: place.address,
+                  coordinates: place.coordinates,
+                });
+
+                setForm((prev) => ({ ...prev, locationId: created.data._id }));
+                toast.success(`Lieu “${created.data.name}” ajouté et sélectionné ✅`);
+              }
+            } catch (err) {
+              console.error("Erreur lieu Google → DB", err);
+              toast.error("Impossible de valider ce lieu");
+            }
           }}
         />
 
-        {/* Suggestions internes (si requête tapée manuellement) */}
-        {(locationSuggestions.length > 0 || showLocationForm) && (
-          <ul className="border rounded bg-white shadow-md max-h-48 overflow-auto mt-2">
-            {locationSuggestions.map((loc) => (
-              <li
-                key={loc._id}
-                onClick={() => {
-                  setForm({ ...form, locationId: loc._id });
-                  setSearchQuery(loc.name);
-                  setLocationSuggestions([]);
-                  setShowLocationForm(false);
-                }}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-              >
-                {loc.name}{" "}
-                <span className="text-xs text-gray-500">({loc.address})</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {/* Si nouveau lieu → formulaire minimal */}
-        {showLocationForm && (
-          <div className="border rounded p-3 bg-gray-50 space-y-3">
-            <input
-              type="text"
-              placeholder="Adresse du lieu"
-              value={newAddress}
-              onChange={(e) => setNewAddress(e.target.value)}
-              className="w-full border rounded px-3 py-2"
-            />
+        {form.locationId && (
+          <div className="flex items-center gap-2 text-sm text-green-700 bg-green-50 border border-green-200 rounded px-3 py-2 mt-2">
+            <span>📍</span>
+            <span>
+              Lieu sélectionné : <strong>{searchQuery}</strong>
+            </span>
             <button
               type="button"
               onClick={() => {
-                navigator.geolocation.getCurrentPosition(
-                  (pos) => {
-                    setCoordinates({
-                      lat: pos.coords.latitude,
-                      lng: pos.coords.longitude,
-                    });
-                    toast.success("Position détectée 📍");
-                  },
-                  () => toast.error("Position non autorisée")
-                );
+                setForm((prev) => ({ ...prev, locationId: "" }));
+                setSearchQuery("");
+                toast("Sélection annulée", { icon: "❌" });
               }}
-              className="text-sm text-blue-600 hover:underline"
+              className="ml-auto text-red-600 hover:underline text-xs"
             >
-              📍 Utiliser ma position actuelle
-            </button>
-
-            <button
-              type="button"
-              onClick={async () => {
-                try {
-                  const res = await api.post("/locations", {
-                    name: searchQuery,
-                    address: newAddress,
-                    coordinates,
-                  });
-                  setForm({ ...form, locationId: res.data._id });
-                  setSearchQuery(res.data.name);
-                  setLocationSuggestions([]);
-                  setShowLocationForm(false);
-                  toast.success(`Lieu “${res.data.name}” créé`);
-                } catch (err) {
-                  toast.error("Erreur création du lieu");
-                }
-              }}
-              className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
-            >
-              ✅ Créer ce lieu
+              annuler
             </button>
           </div>
         )}

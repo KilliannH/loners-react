@@ -10,25 +10,31 @@ const Home = () => {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Exemple de géolocalisation statique (à remplacer par useGeolocation plus tard)
-    const lat = 48.8566;
-    const lng = 2.3522;
-
     useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                const res = await api.get(`/events/nearby?lat=${lat}&lng=${lng}`);
-                setEvents(res.data);
-            } catch (err) {
-                toast.error("Impossible de récupérer les événements proches.");
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
-        };
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
 
-        fetchEvents();
-    }, []);
+        try {
+          const res = await api.get("/events/nearby", {
+            params: {
+              lat: latitude,
+              lng: longitude,
+            },
+          });
+          setEvents(res.data);
+        } catch (err) {
+          toast.error("Erreur de récupération des événements");
+        } finally {
+          setLoading(false);
+        }
+      },
+      (err) => {
+        toast.error("Impossible d'obtenir la position 📍");
+        setLoading(false);
+      }
+    );
+  }, []);
 
     return (
   <>
