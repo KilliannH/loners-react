@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../features/auth/authStore";
+import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Header = () => {
@@ -16,7 +17,10 @@ const Header = () => {
 
     return (
         <header className="bg-black text-white flex justify-between items-center px-4 py-3">
-            <h1 className="text-xl font-bold">Loners</h1>
+            <Link to="/" className="text-xl font-bold hover:underline">
+                Loners
+            </Link>
+
             {isAuthenticated && (
                 <button
                     onClick={handleLogout}

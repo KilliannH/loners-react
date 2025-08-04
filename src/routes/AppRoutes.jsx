@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import Create from "../pages/Create";
+import CreateEvent from "../pages/CreateEvent";
 import Profile from "../pages/Profile";
 import Login from "../features/auth/Login";
 import Register from "../features/auth/Register";
@@ -18,7 +18,7 @@ const AppRoutes = () => (
     } />
     <Route path="/create" element={
       <PrivateRoute>
-        <Create />
+        <CreateEvent />
       </PrivateRoute>
     } />
     <Route path="/profile" element={
