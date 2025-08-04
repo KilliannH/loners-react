@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Home, PlusCircle, User } from "lucide-react";
+import { Home, PlusCircle, User, MessageSquare } from "lucide-react";
 
 const BottomNav = () => (
   <nav className="fixed bottom-0 w-full bg-white border-t flex justify-around py-2 text-sm z-50">
@@ -22,6 +22,16 @@ const BottomNav = () => (
     >
       <PlusCircle size={22} />
       <span className="sr-only">Créer</span>
+    </NavLink>
+
+    <NavLink
+      to="/chat"
+      className={({ isActive }) =>
+        `flex flex-col items-center text-xs ${isActive ? "text-black font-semibold" : "text-gray-400"}`
+      }
+    >
+      <MessageSquare size={22} />
+      <span className="sr-only">Chat</span>
     </NavLink>
 
     <NavLink

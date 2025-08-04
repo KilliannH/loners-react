@@ -8,6 +8,8 @@ import Register from "../features/auth/Register";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/UpdateProfile";
 import EventDetail from "../pages/EventDetail";
+import ChatRoom from "../components/ChatRoom";
+import ChatRooms from "../pages/ChatRooms";
 
 const AppRoutes = () => (
   <Routes>
@@ -36,10 +38,24 @@ const AppRoutes = () => (
     } />
 
     <Route path="/events/:id" element={
-  <PrivateRoute>
-    <EventDetail />
-  </PrivateRoute>
-} />
+      <PrivateRoute>
+        <EventDetail />
+      </PrivateRoute>
+    } />
+
+    <Route path="/event/:id/chat" element={
+      <PrivateRoute>
+        <ChatRoom />
+      </PrivateRoute>
+    } />
+
+    <Route
+      path="/chat"
+      element={
+        <PrivateRoute>
+          <ChatRooms />
+        </PrivateRoute>
+      } />
   </Routes>
 );
 
