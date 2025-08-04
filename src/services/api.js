@@ -19,29 +19,30 @@ api.interceptors.response.use(
     const originalRequest = error.config;
     const refreshToken = localStorage.getItem("refreshToken");
 
-    if (
-      error.response?.status === 401 &&
-      !originalRequest._retry &&
-      refreshToken
-    ) {
+    const is401 = error.response?.status === 401;
+    const isRefreshCall = originalRequest.url.includes("/auth/refresh");
+
+    if (is401 && !originalRequest._retry && refreshToken && !isRefreshCall) {
       originalRequest._retry = true;
+
       try {
-        const res = await axios.post(baseUrl + "/auth/refresh", {
-          refreshToken,
-        });
+        const res = await axios.post(`${baseUrl}/auth/refresh`, { refreshToken });
         const { token: newToken } = res.data;
 
         localStorage.setItem("token", newToken);
+
+        // Injecte le nouveau token dans l'instance axios et la requête originale
         api.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;
         originalRequest.headers["Authorization"] = `Bearer ${newToken}`;
 
-        return api(originalRequest);
-      } catch (refreshError) {
-        useAuthStore.getState().logout(); // déconnexion forcée
+        return api(originalRequest); // rejoue la requête
+      } catch (err) {
+        useAuthStore.getState().logout();
         window.location.href = "/login";
-        return Promise.reject(refreshError);
+        return Promise.reject(err);
       }
     }
+
     return Promise.reject(error);
   }
 );

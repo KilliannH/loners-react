@@ -6,6 +6,8 @@ import Profile from "../pages/Profile";
 import Login from "../features/auth/Login";
 import Register from "../features/auth/Register";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile";
+import EventDetail from "../pages/EventDetail";
 
 const AppRoutes = () => (
   <Routes>
@@ -26,6 +28,18 @@ const AppRoutes = () => (
         <Profile />
       </PrivateRoute>
     } />
+
+    <Route path="/profile/update" element={
+      <PrivateRoute>
+        <UpdateProfile />
+      </PrivateRoute>
+    } />
+
+    <Route path="/events/:id" element={
+  <PrivateRoute>
+    <EventDetail />
+  </PrivateRoute>
+} />
   </Routes>
 );
 

@@ -10,24 +10,24 @@ function App() {
       <MainLayout>
         <AppRoutes />
         <Toaster position="top-center"
-        toastOptions={{
-    duration: 3000,
-    style: {
-      fontSize: "14px",
-    },
-    success: {
-      iconTheme: {
-        primary: '#10b981',
-        secondary: '#f0fdf4',
-      },
-    },
-    error: {
-      iconTheme: {
-        primary: '#ef4444',
-        secondary: '#fee2e2',
-      },
-    },
-  }} />
+          toastOptions={{
+            duration: 3000,
+            style: {
+              fontSize: "14px",
+            },
+            success: {
+              iconTheme: {
+                primary: '#10b981',
+                secondary: '#f0fdf4',
+              },
+            },
+            error: {
+              iconTheme: {
+                primary: '#ef4444',
+                secondary: '#fee2e2',
+              },
+            },
+          }} />
       </MainLayout>
     </Router>
   );
