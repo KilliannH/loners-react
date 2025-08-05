@@ -12,6 +12,18 @@ const ChatRoom = () => {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
 
+  useEffect(() => {
+  const markRead = async () => {
+    try {
+      await api.post(`/notifications/mark-read/${eventId}`);
+    } catch (err) {
+      console.error("Erreur mark as read");
+    }
+  };
+
+  markRead();
+}, [eventId]);
+
   // Charger l'historique
   useEffect(() => {
     const fetchMessages = async () => {
