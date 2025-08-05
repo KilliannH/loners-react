@@ -1,8 +1,14 @@
 import { io } from "socket.io-client";
 
 const socket = io(import.meta.env.VITE_API_URL, {
-  autoConnect: false,
+  autoConnect: true,
   transports: ["websocket"]
 });
+
+// ⬇️ Identification de l’utilisateur auprès du serveur
+const userId = localStorage.getItem("userId"); // ou via ton store
+if (userId) {
+  socket.emit("identify", userId);
+}
 
 export default socket;

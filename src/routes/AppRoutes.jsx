@@ -7,12 +7,22 @@ import Login from "../features/auth/Login";
 import Register from "../features/auth/Register";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/UpdateProfile";
+import useChatNotifications from "../hooks/useChatNotifications";
+import useIdentifySocket from "../hooks/useIdentifySocket";
+import { useLocation } from "react-router-dom";
 import EventDetail from "../pages/EventDetail";
 import ChatRoom from "../components/ChatRoom";
 import ChatRooms from "../pages/ChatRooms";
 
-const AppRoutes = () => (
-  <Routes>
+const AppRoutes = () => {
+  useIdentifySocket();
+  const location = useLocation();
+  const match = location.pathname.match(/^\/event\/([^/]+)\/chat$/);
+  const currentEventId = match ? match[1] : null;
+
+  useChatNotifications(currentEventId);
+
+  return (<Routes>
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/" element={
@@ -56,7 +66,7 @@ const AppRoutes = () => (
           <ChatRooms />
         </PrivateRoute>
       } />
-  </Routes>
-);
+  </Routes>)
+};
 
 export default AppRoutes;

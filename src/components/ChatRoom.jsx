@@ -47,11 +47,13 @@ const ChatRoom = () => {
     const trimmed = input.trim();
     if (!trimmed) return;
 
-    socket.emit("message:send", {
-      eventId,
-      text: trimmed,
-      sender: user._id,
-    });
+    setTimeout(() => {
+      socket.emit("message:send", {
+        eventId,
+        text: input.trim(),
+        sender: user._id,
+      });
+    }, 500);
 
     setInput("");
   };
@@ -66,11 +68,10 @@ const ChatRoom = () => {
         {messages.map((msg, i) => (
           <div
             key={i}
-            className={`max-w-xs px-3 py-2 rounded-lg ${
-              msg.sender._id === user._id
+            className={`max-w-xs px-3 py-2 rounded-lg ${msg.sender._id === user._id
                 ? "bg-black text-white self-end"
                 : "bg-gray-100 text-black self-start"
-            }`}
+              }`}
           >
             <p className="text-sm">{msg.text}</p>
             <p className="text-[10px] mt-1 text-gray-400">
