@@ -3,9 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAuthStore } from "../features/auth/authStore";
 import api from "../services/api";
 import toast from "react-hot-toast";
-import { io } from "socket.io-client";
-
-const socket = io(import.meta.env.VITE_API_URL); // Assure-toi que cette env var est bien configurée
+import socket from "../services/socket";
 
 const ChatRoom = () => {
   const { id: eventId } = useParams();
@@ -30,8 +28,11 @@ const ChatRoom = () => {
 
   // Gestion socket
   useEffect(() => {
+    if (!socket.connected) socket.connect();
+
     socket.emit("join", eventId);
 
+    socket.off("message:new");
     socket.on("message:new", (message) => {
       setMessages((prev) => [...prev, message]);
     });
@@ -43,12 +44,15 @@ const ChatRoom = () => {
   }, [eventId]);
 
   const sendMessage = () => {
-    if (!input.trim()) return;
+    const trimmed = input.trim();
+    if (!trimmed) return;
+
     socket.emit("message:send", {
       eventId,
-      text: input.trim(),
+      text: trimmed,
       sender: user._id,
     });
+
     setInput("");
   };
 

@@ -15,16 +15,6 @@ const BottomNav = () => (
     </NavLink>
 
     <NavLink
-      to="/create"
-      className={({ isActive }) =>
-        `flex flex-col items-center text-xs ${isActive ? "text-black font-semibold" : "text-gray-400"}`
-      }
-    >
-      <PlusCircle size={22} />
-      <span className="sr-only">Créer</span>
-    </NavLink>
-
-    <NavLink
       to="/chat"
       className={({ isActive }) =>
         `flex flex-col items-center text-xs ${isActive ? "text-black font-semibold" : "text-gray-400"}`

@@ -39,6 +39,13 @@ const EventDetail = () => {
     try {
       await api.post(`/events/${id}/join`);
       setJoined(true);
+      // ✅ Ajoute le user dans la liste locale des participants
+      if (!event.attendees.some((u) => u._id === user._id)) {
+        setEvent((prev) => ({
+          ...prev,
+          attendees: [...prev.attendees, user],
+        }));
+      }
       toast.success("Tu participes maintenant 🎉");
     } catch {
       toast.error("Erreur lors de l’inscription");
@@ -48,7 +55,7 @@ const EventDetail = () => {
   if (loading) return <p className="p-4">Chargement...</p>;
   if (!event) return <p className="p-4 text-red-500">Événement introuvable</p>;
 
-const [lng, lat] = event.location?.coordinates?.coordinates || [];
+  const [lng, lat] = event.location?.coordinates?.coordinates || [];
   return (
     <div className="max-w-md mx-auto p-4 space-y-4">
       <button
@@ -73,8 +80,8 @@ const [lng, lat] = event.location?.coordinates?.coordinates || [];
       )}
 
       {Number.isFinite(lat) && Number.isFinite(lng) && (
-  <MapWithMarker lat={lat} lng={lng} />
-)}
+        <MapWithMarker lat={lat} lng={lng} />
+      )}
 
       <p className="text-sm text-gray-400">
         {event.attendees?.length || 0} participant(s)

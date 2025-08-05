@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { io } from "socket.io-client";
 import toast from "react-hot-toast";
-
-const socket = io(import.meta.env.VITE_API_URL);
+import socket from "../services/socket";
 
 const useChatNotifications = (currentEventId) => {
   useEffect(() => {
@@ -17,8 +15,6 @@ const useChatNotifications = (currentEventId) => {
         { position: "bottom-right", duration: 4000 }
       );
 
-      const audio = new Audio("/notif.mp3");
-      audio.play().catch(() => {});
     };
 
     socket.on("message:notification", handleNotification);
