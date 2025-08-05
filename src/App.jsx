@@ -1,10 +1,22 @@
-import React from "react";
+import { React, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 import MainLayout from "./layouts/MainLayout";
 import { Toaster } from "react-hot-toast";
+import { useNotificationStore } from "./features/notifications/notificationStore";
+import { useAuthStore } from "./features/auth/authStore";
 
 function App() {
+  const { user } = useAuthStore();
+  const { fetchUnread, setupNotificationSocket } = useNotificationStore();
+
+  useEffect(() => {
+    if (user?._id) {
+      fetchUnread();
+      setupNotificationSocket(user._id);
+    }
+  }, [user?._id]);
+
   return (
     <Router>
       <MainLayout>
