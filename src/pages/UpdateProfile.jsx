@@ -4,78 +4,109 @@ import api from "../services/api";
 import toast from "react-hot-toast";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const UpdateProfile = () => {
-    const navigate = useNavigate();
-    const { user, setUser } = useAuthStore();
-    const [form, setForm] = useState({
-        username: user?.username || "",
-        avatarUrl: user?.avatarUrl || "",
-    });
-    const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { user, setUser } = useAuthStore();
+  const [form, setForm] = useState({
+    username: user?.username || "",
+    avatarUrl: user?.avatarUrl || "",
+  });
+  const [loading, setLoading] = useState(false);
 
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-    const handleUpdate = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        try {
-            const res = await api.put("/users/me", form);
-            setUser(res.data, localStorage.getItem("token"), localStorage.getItem("refreshToken"));
-            toast.success("Profil mis à jour !");
-        } catch (err) {
-            toast.error("Erreur lors de la mise à jour");
-        } finally {
-            setLoading(false);
-        }
-    };
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await api.put("/users/me", form);
+      setUser(
+        res.data,
+        localStorage.getItem("token"),
+        localStorage.getItem("refreshToken")
+      );
+      toast.success(t("updateProfile.toast.success"));
+    } catch (err) {
+      toast.error(t("updateProfile.toast.error"));
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return (
-        <div className="max-w-md mx-auto p-4 space-y-6">
-            <div className="flex items-center gap-2">
-  <button onClick={() => navigate(-1)} className="text-gray-600 hover:text-black">
-    <ArrowLeft size={20} />
-  </button>
-  <h2 className="text-2xl font-bold">Mon profil</h2>
-</div>
-            <form onSubmit={handleUpdate} className="space-y-4">
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Nom d'utilisateur"
-                    value={form.username}
-                    onChange={handleChange}
-                    className="w-full border rounded px-3 py-2"
-                />
-                <input
-                    type="url"
-                    name="avatarUrl"
-                    placeholder="URL de l'avatar"
-                    value={form.avatarUrl}
-                    onChange={handleChange}
-                    className="w-full border rounded px-3 py-2"
-                />
+  return (
+    <motion.div
+      className="max-w-md mx-auto p-4 space-y-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      {/* Header */}
+      <motion.div
+        className="flex items-center gap-2"
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.1 }}
+      >
+        <button onClick={() => navigate(-1)} className="text-gray-600 hover:text-black">
+          <ArrowLeft size={20} />
+        </button>
+        <h2 className="text-2xl font-bold">{t("updateProfile.title")}</h2>
+      </motion.div>
 
-                {form.avatarUrl && (
-                    <img
-                        src={form.avatarUrl}
-                        alt="avatar preview"
-                        className="w-20 h-20 rounded-full object-cover border mx-auto"
-                    />
-                )}
+      {/* Form */}
+      <motion.form
+        onSubmit={handleUpdate}
+        className="space-y-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.15 }}
+      >
+        <input
+          type="text"
+          name="username"
+          maxLength={30}
+          placeholder={t("updateProfile.fields.username")}
+          value={form.username}
+          onChange={handleChange}
+          className="w-full border rounded px-3 py-2"
+        />
+        <input
+          type="url"
+          name="avatarUrl"
+          maxLength={200}
+          placeholder={t("updateProfile.fields.avatarUrl")}
+          value={form.avatarUrl}
+          onChange={handleChange}
+          className="w-full border rounded px-3 py-2"
+        />
 
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
-                >
-                    {loading ? "Mise à jour..." : "Mettre à jour"}
-                </button>
-            </form>
-        </div>
-    );
+        {form.avatarUrl && (
+          <motion.img
+            src={form.avatarUrl}
+            alt="avatar preview"
+            className="w-20 h-20 rounded-full object-cover border mx-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+          />
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
+        >
+          {loading ? t("updateProfile.status.loading") : t("updateProfile.status.submit")}
+        </button>
+      </motion.form>
+    </motion.div>
+  );
 };
 
 export default UpdateProfile;

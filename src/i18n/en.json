@@ -1,0 +1,169 @@
+{
+    "chatRooms": {
+        "title": "My chat rooms",
+        "loading": "Loading...",
+        "noRooms": "No rooms available.",
+        "unreadMessages": "{{count}} unread message",
+        "unreadMessages_plural": "{{count}} unread messages"
+    },
+    "createEvent": {
+        "title": "Create an Event",
+        "fields": {
+            "name": "Name",
+            "description": "Description",
+            "type": "Type",
+            "date": "Date",
+            "location": "Location",
+            "selectLocation": "Selected location:",
+            "cancelSelection": "cancel"
+        },
+        "types": {
+            "concert": "Concert",
+            "spectacle": "Show",
+            "expo": "Exhibition",
+            "festival": "Festival",
+            "soiree_a_theme": "Themed party",
+            "autre": "Other"
+        },
+        "status": {
+            "loading": "Creating...",
+            "submit": "Create event"
+        },
+        "toast": {
+            "locationRequired": "You must choose a location!",
+            "created": "Event created 🎉",
+            "createError": "Error while creating event",
+            "locationSearchError": "Error while searching for locations",
+            "locationExists": "Existing location selected ✅",
+            "locationCreated": "Location “{{name}}” added and selected ✅",
+            "locationInvalid": "Could not validate this location",
+            "locationReset": "Selection canceled"
+        }
+    },
+    "eventDetail": {
+        "loading": "Loading...",
+        "notFound": "Event not found",
+        "back": "Back",
+        "type": "Type",
+        "date": "Date",
+        "attendees": "attendee(s)",
+        "leave": "Leave event",
+        "join": "Join event",
+        "toast": {
+            "loadError": "Failed to load event",
+            "leaveError": "Error while leaving event",
+            "left": "You left the event.",
+            "joinError": "Error while joining event",
+            "joined": "You're now participating 🎉"
+        }
+    },
+    "home": {
+        "greeting": "Hi {{username}}",
+        "subtitle": "Here's what's happening near you",
+        "filters": {
+            "all": "All types"
+        },
+        "refreshPosition": "Refresh my position",
+        "noEvents": "No events found nearby.",
+        "attendees": "attendee(s)",
+        "createEvent": "Create an event",
+        "toast": {
+            "geolocError": "Couldn't get your position 📍",
+            "geolocRefreshError": "Unable to get location",
+            "fetchError": "Error fetching events"
+        }
+    },
+    "profile": {
+        "edit": "Edit my profile",
+        "createdEvents": "Created events",
+        "joinedEvents": "Joined events",
+        "noCreated": "You haven’t created any events yet.",
+        "noJoined": "You’re not participating in any events.",
+        "attendees": "attendee(s)",
+        "toast": {
+            "fetchError": "Failed to load your events"
+        }
+    },
+    "updateProfile": {
+        "title": "My Profile",
+        "fields": {
+            "username": "Username",
+            "avatarUrl": "Avatar URL"
+        },
+        "status": {
+            "loading": "Updating...",
+            "submit": "Update"
+        },
+        "toast": {
+            "success": "Profile updated!",
+            "error": "Error while updating profile"
+        }
+    },
+    "map": {
+        "loading": "Loading map..."
+    },
+    "register": {
+        "title": "Create an account",
+        "fields": {
+            "username": "Username",
+            "email": "Email",
+            "password": "Password"
+        },
+        "placeholders": {
+            "username": "loner42",
+            "email": "loner@email.com",
+            "password": "********"
+        },
+        "submit": "Sign up",
+        "already": "Already have an account?",
+        "login": "Log in",
+        "toast": {
+            "success": "Registration successful 🎉",
+            "error": "Registration error"
+        }
+    },
+    "login": {
+        "title": "Login",
+        "fields": {
+            "email": "Email",
+            "password": "Password"
+        },
+        "placeholders": {
+            "email": "your.email@email.com",
+            "password": "********"
+        },
+        "submit": "Log in",
+        "noAccount": "Don't have an account?",
+        "register": "Create an account",
+        "toast": {
+            "success": "Successfully logged in 👋",
+            "error": "Login error, please try again"
+        }
+    },
+    "header": {
+        "logout": "Logout",
+        "toast": {
+            "logoutSuccess": "Successfully logged out"
+        }
+    },
+    "googlePlacesInput": {
+        "placeholder": "Search for a place..."
+    },
+    "chat": {
+        "inputPlaceholder": "Write a message...",
+        "send": "Send",
+        "unknown": "Unknown",
+        "errors": {
+            "fetch": "Error loading chat"
+        }
+    },
+    "nav": {
+        "home": "Home",
+        "chat": "Chat",
+        "profile": "Profile"
+    },
+    "auth": {
+    "logout": "Logout",
+    "logoutSuccess": "Successfully logged out"
+  }
+}

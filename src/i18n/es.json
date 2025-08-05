@@ -1,0 +1,169 @@
+{
+  "chatRooms": {
+    "title": "Mis salas de chat",
+    "loading": "Cargando...",
+    "noRooms": "No hay salas disponibles.",
+    "unreadMessages": "{{count}} mensaje no leído",
+    "unreadMessages_plural": "{{count}} mensajes no leídos"
+  },
+  "createEvent": {
+    "title": "Crear un evento",
+    "fields": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "type": "Tipo",
+      "date": "Fecha",
+      "location": "Ubicación",
+      "selectLocation": "Ubicación seleccionada:",
+      "cancelSelection": "cancelar"
+    },
+    "types": {
+      "concert": "Concierto",
+      "spectacle": "Espectáculo",
+      "expo": "Exposición",
+      "festival": "Festival",
+      "soiree_a_theme": "Fiesta temática",
+      "autre": "Otro"
+    },
+    "status": {
+      "loading": "Creando...",
+      "submit": "Crear evento"
+    },
+    "toast": {
+      "locationRequired": "¡Debes elegir una ubicación!",
+      "created": "Evento creado 🎉",
+      "createError": "Error al crear el evento",
+      "locationSearchError": "Error al buscar ubicaciones",
+      "locationExists": "Ubicación existente seleccionada ✅",
+      "locationCreated": "Ubicación “{{name}}” agregada y seleccionada ✅",
+      "locationInvalid": "No se pudo validar esta ubicación",
+      "locationReset": "Selección cancelada"
+    }
+  },
+  "eventDetail": {
+    "loading": "Cargando...",
+    "notFound": "Evento no encontrado",
+    "back": "Volver",
+    "type": "Tipo",
+    "date": "Fecha",
+    "attendees": "asistente(s)",
+    "leave": "Salir del evento",
+    "join": "Unirse al evento",
+    "toast": {
+      "loadError": "Error al cargar el evento",
+      "leaveError": "Error al salir del evento",
+      "left": "Has salido del evento.",
+      "joinError": "Error al unirse al evento",
+      "joined": "Ahora estás participando 🎉"
+    }
+  },
+  "home": {
+    "greeting": "Hola {{username}}",
+    "subtitle": "Esto es lo que sucede cerca de ti",
+    "filters": {
+      "all": "Todos los tipos"
+    },
+    "refreshPosition": "Actualizar mi ubicación",
+    "noEvents": "No se encontraron eventos cercanos.",
+    "attendees": "asistente(s)",
+    "createEvent": "Crear un evento",
+    "toast": {
+      "geolocError": "No se pudo obtener tu ubicación 📍",
+      "geolocRefreshError": "No se puede obtener la ubicación",
+      "fetchError": "Error al obtener eventos"
+    }
+  },
+  "profile": {
+    "edit": "Editar mi perfil",
+    "createdEvents": "Eventos creados",
+    "joinedEvents": "Eventos unidos",
+    "noCreated": "Aún no has creado ningún evento.",
+    "noJoined": "No estás participando en ningún evento.",
+    "attendees": "asistente(s)",
+    "toast": {
+      "fetchError": "Error al cargar tus eventos"
+    }
+  },
+  "updateProfile": {
+    "title": "Mi perfil",
+    "fields": {
+      "username": "Nombre de usuario",
+      "avatarUrl": "URL del avatar"
+    },
+    "status": {
+      "loading": "Actualizando...",
+      "submit": "Actualizar"
+    },
+    "toast": {
+      "success": "¡Perfil actualizado!",
+      "error": "Error al actualizar el perfil"
+    }
+  },
+  "map": {
+    "loading": "Cargando mapa..."
+  },
+  "register": {
+    "title": "Crear una cuenta",
+    "fields": {
+      "username": "Nombre de usuario",
+      "email": "Correo electrónico",
+      "password": "Contraseña"
+    },
+    "placeholders": {
+      "username": "solitario42",
+      "email": "solitario@email.com",
+      "password": "********"
+    },
+    "submit": "Registrarse",
+    "already": "¿Ya tienes una cuenta?",
+    "login": "Iniciar sesión",
+    "toast": {
+      "success": "Registro exitoso 🎉",
+      "error": "Error de registro"
+    }
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "fields": {
+      "email": "Correo electrónico",
+      "password": "Contraseña"
+    },
+    "placeholders": {
+      "email": "tu.email@email.com",
+      "password": "********"
+    },
+    "submit": "Iniciar sesión",
+    "noAccount": "¿No tienes una cuenta?",
+    "register": "Crear una cuenta",
+    "toast": {
+      "success": "Sesión iniciada con éxito 👋",
+      "error": "Error de inicio de sesión, inténtalo de nuevo"
+    }
+  },
+  "header": {
+    "logout": "Cerrar sesión",
+    "toast": {
+      "logoutSuccess": "Sesión cerrada con éxito"
+    }
+  },
+  "googlePlacesInput": {
+    "placeholder": "Buscar un lugar..."
+  },
+  "chat": {
+    "inputPlaceholder": "Escribe un mensaje...",
+    "send": "Enviar",
+    "unknown": "Desconocido",
+    "errors": {
+      "fetch": "Error al cargar el chat"
+    }
+  },
+  "nav": {
+    "home": "Inicio",
+    "chat": "Chat",
+    "profile": "Perfil"
+  },
+  "auth": {
+    "logout": "Cerrar sesión",
+    "logoutSuccess": "Sesión cerrada con éxito"
+  }
+}

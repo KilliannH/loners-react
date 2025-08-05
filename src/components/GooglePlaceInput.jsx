@@ -1,7 +1,9 @@
 import { useRef, useEffect } from "react";
 import { useLoadGoogleMaps } from "../hooks/useLoadGoogleMaps";
+import { useTranslation } from "react-i18next";
 
 const GooglePlacesInput = ({ onSelect }) => {
+  const { t } = useTranslation();
   const inputRef = useRef(null);
   const loaded = useLoadGoogleMaps();
 
@@ -29,7 +31,7 @@ const GooglePlacesInput = ({ onSelect }) => {
       onSelect({
         name: place.name,
         address: place.formatted_address,
-        coordinates: { lat, lng }
+        coordinates: { lat, lng },
       });
     });
   }, [loaded]);
@@ -38,8 +40,9 @@ const GooglePlacesInput = ({ onSelect }) => {
     <input
       ref={inputRef}
       type="text"
-      placeholder="Rechercher un lieu..."
+      placeholder={t("googlePlacesInput.placeholder")}
       className="w-full border border-gray-300 rounded px-3 py-2"
+      maxLength={300}
       disabled={!loaded}
     />
   );
