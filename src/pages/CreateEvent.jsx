@@ -14,7 +14,6 @@ const CreateEvent = () => {
   });
   const [newAddress, setNewAddress] = useState("");
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
-  const [showLocationForm, setShowLocationForm] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [locationSuggestions, setLocationSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -90,6 +89,8 @@ const CreateEvent = () => {
           <option value="concert">Concert</option>
           <option value="spectacle">Spectacle</option>
           <option value="expo">Expo</option>
+          <option value="expo">Festival</option>
+          <option value="expo">Soirée à thème</option>
           <option value="autre">Autre</option>
         </select>
         <input

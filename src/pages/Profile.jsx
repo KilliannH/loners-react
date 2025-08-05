@@ -2,20 +2,24 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import api from "../services/api";
 import toast from "react-hot-toast";
+import { Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const { user } = useAuth();
-  const [myEvents, setMyEvents] = useState([]);
+  const [createdEvents, setCreatedEvents] = useState([]);
+  const [joinedEvents, setJoinedEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(user);
-    const fetchMyEvents = async () => {
+    const fetchEvents = async () => {
       try {
-        const res = await api.get("/events/mine"); // Crée cette route côté BE si besoin
-        setMyEvents(res.data);
+        const res = await api.get("/events/my-involved");
+        const allEvents = res.data;
+
+        setCreatedEvents(allEvents.filter(e => e.owner._id === user._id));
+        setJoinedEvents(allEvents.filter(e => e.owner._id !== user._id));
       } catch (err) {
         toast.error("Impossible de charger vos événements");
       } finally {
@@ -23,8 +27,23 @@ const Profile = () => {
       }
     };
 
-    fetchMyEvents();
-  }, []);
+    fetchEvents();
+  }, [user?._id]);
+
+  const EventCard = ({ event }) => (
+    <div
+      key={event._id}
+      onClick={() => navigate(`/events/${event._id}`)}
+      className="cursor-pointer bg-white rounded shadow p-4 hover:shadow-md transition"
+    >
+      <h4 className="text-md font-semibold">{event.name}</h4>
+      <p className="text-sm text-gray-600 mt-1">{event.description}</p>
+      <p className="text-xs text-gray-400 mt-2 flex items-center gap-1">
+        <Users size={12} />
+        {event.attendees.length} participant(s)
+      </p>
+    </div>
+  );
 
   return (
     <div className="max-w-md mx-auto p-4 space-y-6">
@@ -56,9 +75,8 @@ const Profile = () => {
       </div>
 
       {/* Événements créés */}
-      <div className="space-y-3">
-        <h3 className="text-lg font-bold">Mes événements</h3>
-
+      <section>
+        <h3 className="text-lg font-bold mb-2">Événements créés</h3>
         {loading ? (
           [1, 2].map((i) => (
             <div key={i} className="bg-white rounded shadow p-4 animate-pulse">
@@ -66,22 +84,37 @@ const Profile = () => {
               <div className="h-3 bg-gray-200 w-3/4 rounded" />
             </div>
           ))
-        ) : myEvents.length === 0 ? (
+        ) : createdEvents.length === 0 ? (
           <p className="text-gray-500 text-sm">Tu n’as encore créé aucun événement.</p>
         ) : (
-          myEvents.map((event) => (
-  <div
-    key={event._id}
-    onClick={() => navigate(`/events/${event._id}`)}
-    className="bg-white rounded shadow p-4 cursor-pointer hover:bg-gray-100 transition"
-  >
-    <h4 className="text-md font-semibold">{event.name}</h4>
-    <p className="text-sm text-gray-600">{event.description}</p>
-    <p className="text-xs text-gray-400 mt-1 capitalize">{event.type}</p>
-  </div>
-))
+          <div className="space-y-3">
+            {createdEvents.map((event) => (
+              <EventCard key={event._id} event={event} />
+            ))}
+          </div>
         )}
-      </div>
+      </section>
+
+      {/* Événements rejoints */}
+      <section>
+        <h3 className="text-lg font-bold mb-2">Événements rejoints</h3>
+        {loading ? (
+          [1, 2].map((i) => (
+            <div key={i} className="bg-white rounded shadow p-4 animate-pulse">
+              <div className="h-4 bg-gray-300 w-1/2 mb-2 rounded" />
+              <div className="h-3 bg-gray-200 w-3/4 rounded" />
+            </div>
+          ))
+        ) : joinedEvents.length === 0 ? (
+          <p className="text-gray-500 text-sm">Tu ne participes à aucun événement.</p>
+        ) : (
+          <div className="space-y-3">
+            {joinedEvents.map((event) => (
+              <EventCard key={event._id} event={event} />
+            ))}
+          </div>
+        )}
+      </section>
     </div>
   );
 };

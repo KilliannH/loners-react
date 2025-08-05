@@ -4,7 +4,7 @@ import { useAuthStore } from "../features/auth/authStore";
 import api from "../services/api";
 import toast from "react-hot-toast";
 import MapWithMarker from "../components/MapWithMarker";
-import { MapPin, UserPlus, Check, ArrowLeft } from "lucide-react";
+import { MapPin, UserPlus, XCircle, Check, ArrowLeft } from "lucide-react";
 
 const EventDetail = () => {
   const { user } = useAuthStore();
@@ -34,6 +34,17 @@ const EventDetail = () => {
 
     fetchEvent();
   }, [id, user?._id]);
+
+  const handleLeave = async () => {
+    try {
+      await api.post(`/events/${id}/leave`);
+      setJoined(false);
+      toast("Tu as quitté l’événement.");
+      // 🧼 Optionnel : supprime les notifs liées ?
+    } catch {
+      toast.error("Erreur lors de la désinscription");
+    }
+  };
 
   const handleJoin = async () => {
     try {
@@ -87,17 +98,20 @@ const EventDetail = () => {
         {event.attendees?.length || 0} participant(s)
       </p>
 
-      {!joined ? (
+      {joined ? (
+        <button
+          onClick={handleLeave}
+          className="w-full flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded hover:bg-red-600 transition"
+        >
+          <XCircle size={18} /> Quitter l'événement
+        </button>
+      ) : (
         <button
           onClick={handleJoin}
           className="w-full flex items-center justify-center gap-2 bg-black text-white py-2 rounded hover:bg-gray-800 transition"
         >
           <UserPlus size={18} /> Je participe
         </button>
-      ) : (
-        <div className="w-full flex items-center justify-center gap-2 text-green-600 font-medium">
-          <Check size={18} /> Tu participes déjà
-        </div>
       )}
     </div>
   );
