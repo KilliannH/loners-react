@@ -31,14 +31,10 @@ const MapWithMarkers = ({ markers = [], fallbackLat, fallbackLng }) => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={13}
+      zoom={17}
       options={{ disableDefaultUI: true }}
     >
-      {markers.map((m, i) =>
-        isValidLatLng(m.lat, m.lng) ? (
-          <Marker key={i} position={{ lat: m.lat, lng: m.lng }} />
-        ) : null
-      )}
+      <Marker position={{lat: fallbackLat, lng: fallbackLng}} />
     </GoogleMap>
   );
 };

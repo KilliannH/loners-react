@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../features/auth/authStore";
 import api from "../services/api";
 import toast from "react-hot-toast";
-import MapWithMarker from "../components/MapWithMarkers";
+import MapWithMarkers from "../components/MapWithMarkers";
 import { motion } from "framer-motion";
 import { MapPin, UserPlus, XCircle, ArrowLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -71,7 +71,6 @@ const EventDetail = () => {
   if (!event) return <p className="p-4 text-red-500">{t("eventDetail.notFound")}</p>;
 
   const [lng, lat] = event.location?.coordinates?.coordinates || [];
-
   return (
     <motion.div
       className="max-w-md mx-auto p-4 space-y-4"
@@ -119,7 +118,11 @@ const EventDetail = () => {
 
       {Number.isFinite(lat) && Number.isFinite(lng) && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-          <MapWithMarker lat={lat} lng={lng} />
+          <MapWithMarkers
+            markers={[{ lat, lng }]}
+            fallbackLat={lat}
+            fallbackLng={lng}
+          />
         </motion.div>
       )}
 
