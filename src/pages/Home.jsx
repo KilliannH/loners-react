@@ -7,6 +7,23 @@ import { motion } from "framer-motion";
 import { MapPin, Users } from "lucide-react";
 import MapWithMarkers from "../components/MapWithMarkers";
 import { useTranslation } from "react-i18next";
+import Carousel from "react-multi-carousel";
+
+const responsive = {
+  all: {
+    breakpoint: { max: 4000, min: 0 },
+    items: 1, // 1 colonne
+    slidesToSlide: 1,
+  },
+};
+
+const groupEvents = (events, perGroup = 3) => {
+  const grouped = [];
+  for (let i = 0; i < events.length; i += perGroup) {
+    grouped.push(events.slice(i, i + perGroup));
+  }
+  return grouped;
+};
 
 const Home = () => {
   const { t } = useTranslation();
@@ -55,7 +72,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-start items-center min-h-[calc(100vh-80px)] px-4 py-6 space-y-6">
+      <div className="flex flex-col justify-start items-center min-h-[calc(100vh-80px)] pb-10 px-4 py-6 space-y-6">
 
         {/* 🗺️ Map */}
         {position && typeof position.lat === "number" && typeof position.lng === "number" && (
@@ -150,51 +167,39 @@ const Home = () => {
         </motion.div>
 
         {/* 📅 Events list */}
-        <motion.div
-          className="w-full max-w-md space-y-4"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.1 },
-            },
-          }}
-        >
-          {loading ? (
-            [1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl shadow p-4 animate-pulse space-y-2"
-              >
-                <div className="h-5 bg-gray-300 rounded w-1/2" />
-                <div className="h-4 bg-gray-200 rounded w-2/3" />
-                <div className="h-3 bg-gray-100 rounded w-1/3" />
+        <div className="w-full max-w-md relative pb-10">
+          <Carousel
+            responsive={responsive}
+            arrows={false}
+            showDots={true}
+            swipeable
+            draggable
+            infinite={false}
+            containerClass="carousel-container"
+            renderDotsOutside={true}
+            dotListClass="absolute left-0 bottom-0 right-0 z-10 flex justify-center gap-2"
+            itemClass="px-1"
+          >
+            {groupEvents(events, 3).map((group, i) => (
+              <div key={i} className="flex flex-col gap-4 h-full">
+                {group.map((event) => (
+                  <div
+                    key={event._id}
+                    onClick={() => navigate(`/events/${event._id}`)}
+                    className="bg-white rounded-xl shadow p-4 border hover:shadow-md transition cursor-pointer"
+                  >
+                    <h3 className="text-lg font-bold">{event.name}</h3>
+                    <p className="text-sm text-gray-600">{event.description}</p>
+                    <p className="text-xs text-gray-400 mt-1 flex items-center gap-1">
+                      <Users size={12} />
+                      {event.attendees?.length || 0} {t("home.attendees")}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))
-          ) : events.length === 0 ? (
-            <p className="text-gray-500 text-center">{t("home.noEvents")}</p>
-          ) : (
-            events.map((event) => (
-              <motion.div
-                key={event._id}
-                onClick={() => navigate(`/events/${event._id}`)}
-                className="bg-white rounded-xl shadow p-4 border hover:shadow-md transition cursor-pointer"
-                variants={{
-                  hidden: { opacity: 0, y: 10 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <h3 className="text-lg font-bold">{event.name}</h3>
-                <p className="text-sm text-gray-600">{event.description}</p>
-                <p className="text-xs text-gray-400 mt-1 flex items-center gap-1">
-                  <Users size={12} />
-                  {event.attendees?.length || 0} {t("home.attendees")}
-                </p>
-              </motion.div>
-            ))
-          )}
-        </motion.div>
+            ))}
+          </Carousel>
+        </div>
       </div>
 
       {/* ➕ Create Event Button */}
