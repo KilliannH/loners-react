@@ -5,6 +5,7 @@ import api from "../services/api";
 import toast from "react-hot-toast";
 import MapWithMarkers from "../components/MapWithMarkers";
 import { motion, AnimatePresence } from "framer-motion";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import { Trash2, ArrowLeft, Pencil, MapPin, UserPlus, XCircle, MessageCircle } from "lucide-react";
 import CustomHelmet from "../components/CustomHelmet";
 import EventJsonLd from "../components/EventJsonLd";
@@ -92,7 +93,7 @@ const EventDetail = () => {
       />
       <EventJsonLd event={event} />
       <motion.div
-        className="max-w-md mx-auto p-4 space-y-4 pb-14"
+        className="max-w-md mx-auto p-4 space-y-4 pb-24"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
@@ -180,10 +181,6 @@ const EventDetail = () => {
           </motion.div>
         )}
 
-        <motion.p className="text-sm text-gray-600" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}>
-          {event.attendees?.length || 0} {t("eventDetail.attendees")}
-        </motion.p>
-
         {/* ✅ Join/Leave + 💬 Chat */}
         <motion.div
           className="flex flex-col gap-2"
@@ -213,6 +210,24 @@ const EventDetail = () => {
           >
             <MessageCircle size={18} /> {t("eventDetail.goToChat")}
           </button>
+
+          {event?.attendees?.length > 0 && (
+          <div className="mt-3">
+            <h4 className="text-sm text-gray-500 mb-2">
+              {t("eventDetail.attendees")} ({event.attendees.length})
+            </h4>
+            <div className="flex space-x-2">
+              {event.attendees.map((user, i) => (
+                <img
+                  key={i}
+                  src={user.avatarUrl || "/default-avatar.png"}
+                  alt="attendee"
+                  className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                />
+              ))}
+            </div>
+          </div>
+        )}
         </motion.div>
       </motion.div>
 
