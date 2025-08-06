@@ -41,7 +41,6 @@ const Home = () => {
       if (typeFilter !== "all") {
         filtered = filtered.filter((ev) => ev.type === typeFilter);
       }
-      console.log(filtered);
       setEvents(filtered);
     } catch {
       toast.error(t("home.toast.fetchError"));
@@ -62,12 +61,11 @@ const Home = () => {
         {position && typeof position.lat === "number" && typeof position.lng === "number" && (
           <MapWithMarkers
             markers={events
-              .filter(e => e?.location?.coordinates?.lat && e?.location?.coordinates?.lng)
+              .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
               .map(e => ({
-                lat: Number(e.location.coordinates.lat),
-                lng: Number(e.location.coordinates.lng),
-              }))
-            }
+                lat: Number(e.location.coordinates.coordinates[1]),
+                lng: Number(e.location.coordinates.coordinates[0]),
+              }))}
             fallbackLat={position.lat}
             fallbackLng={position.lng}
           />
