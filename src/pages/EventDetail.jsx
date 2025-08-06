@@ -58,7 +58,7 @@ const EventDetail = () => {
     try {
       await api.delete(`/events/${id}`);
       toast.success(t("eventDetail.toast.deleted"));
-      navigate("/");
+      navigate("/home");
     } catch {
       toast.error(t("eventDetail.toast.deleteError"));
     }

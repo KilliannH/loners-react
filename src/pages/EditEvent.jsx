@@ -28,7 +28,7 @@ const EditEvent = () => {
                 setForm({ name, description, type, date: new Date(date).toISOString().slice(0, 16) });
             } catch {
                 toast.error(t("eventDetail.toast.loadError"));
-                navigate("/");
+                navigate("/home");
             } finally {
                 setLoading(false);
             }

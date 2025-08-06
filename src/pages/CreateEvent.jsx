@@ -55,7 +55,7 @@ const CreateEvent = () => {
     try {
       await api.post("/events", form);
       toast.success(t("createEvent.toast.created"));
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       toast.error(err?.response?.data?.error || t("createEvent.toast.createError"));
     } finally {

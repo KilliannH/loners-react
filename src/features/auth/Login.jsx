@@ -21,7 +21,7 @@ const Login = () => {
       const { user, token, refreshToken } = await loginUser({ email, password });
       setUser(user, token, refreshToken);
       toast.success(t("login.toast.success"));
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       const message =
         err?.response?.data?.error || t("login.toast.error");

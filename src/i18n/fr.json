@@ -131,7 +131,8 @@
         "title": "Mon profil",
         "fields": {
             "username": "Nom d'utilisateur",
-            "avatarUrl": "URL de l'avatar"
+            "avatarUrl": "URL de l'avatar",
+            "bio": "Parle un peu de toi (100 caractères max)"
         },
         "status": {
             "loading": "Mise à jour...",

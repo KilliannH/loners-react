@@ -26,7 +26,7 @@ const Register = () => {
       });
       setUser(user, token, refreshToken);
       toast.success(t("register.toast.success"));
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       const message =
         err?.response?.data?.message ||

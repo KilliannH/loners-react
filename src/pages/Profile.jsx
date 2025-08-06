@@ -66,6 +66,9 @@ const Profile = () => {
           <div>
             <h2 className="text-xl font-semibold">{user?.username}</h2>
             <p className="text-sm text-gray-500">{user?.email}</p>
+            {user?.bio && (
+              <p className="text-sm text-gray-600 italic mt-1">“{user.bio}”</p>
+            )}
           </div>
         </motion.div>
 
