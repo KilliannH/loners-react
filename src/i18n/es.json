@@ -34,8 +34,8 @@
       "created": "Evento creado 🎉",
       "createError": "Error al crear el evento",
       "locationSearchError": "Error al buscar ubicaciones",
-      "locationExists": "Ubicación existente seleccionada ✅",
-      "locationCreated": "Ubicación “{{name}}” agregada y seleccionada ✅",
+      "locationExists": "Ubicación existente seleccionada",
+      "locationCreated": "Ubicación “{{name}}” agregada y seleccionada",
       "locationInvalid": "No se pudo validar esta ubicación",
       "locationReset": "Selección cancelada"
     }
@@ -46,15 +46,24 @@
     "back": "Volver",
     "type": "Tipo",
     "date": "Fecha",
-    "attendees": "asistente(s)",
-    "leave": "Salir del evento",
-    "join": "Unirse al evento",
+    "attendees": "participantes",
+    "join": "Unirse",
+    "leave": "Salir",
+    "goToChat": "Ver conversación",
+    "edit": "Editar evento",
+    "delete": "Eliminar evento",
+    "confirmDelete": "¿Eliminar este evento? Esta acción es irreversible.",
     "toast": {
-      "loadError": "Error al cargar el evento",
-      "leaveError": "Error al salir del evento",
       "left": "Has salido del evento.",
-      "joinError": "Error al unirse al evento",
-      "joined": "Ahora estás participando 🎉"
+      "joined": "Te has unido al evento.",
+      "joinError": "Error al intentar unirse.",
+      "leaveError": "Error al intentar salir.",
+      "deleted": "Evento eliminado.",
+      "deleteError": "Error al eliminar el evento.",
+      "loadError": "Error al cargar el evento.",
+      "notFound": "Evento no encontrado.",
+      "updated": "Evento actualizado.",
+      "updateError": "Error al actualizar el evento."
     }
   },
   "home": {
@@ -101,7 +110,7 @@
   },
   "map": {
     "loading": "Cargando mapa...",
-        "invalid_coordinates": "Coordenadas no válidas"
+    "invalid_coordinates": "Coordenadas no válidas"
   },
   "register": {
     "title": "Crear una cuenta",
@@ -166,5 +175,8 @@
   "auth": {
     "logout": "Cerrar sesión",
     "logoutSuccess": "Sesión cerrada con éxito"
-  }
+  },
+    "common": {
+        "cancel": "Cancelar"
+    }
 }

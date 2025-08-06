@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 import EventDetail from "../pages/EventDetail";
 import ChatRoom from "../components/ChatRoom";
 import ChatRooms from "../pages/ChatRooms";
+import EditEvent from "../pages/EditEvent";
 
 const AppRoutes = () => {
   useIdentifySocket();
@@ -44,6 +45,12 @@ const AppRoutes = () => {
     <Route path="/profile/update" element={
       <PrivateRoute>
         <UpdateProfile />
+      </PrivateRoute>
+    } />
+
+    <Route path="/events/:id/edit" element={
+      <PrivateRoute>
+        <EditEvent />
       </PrivateRoute>
     } />
 

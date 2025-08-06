@@ -34,8 +34,8 @@
             "created": "Event created 🎉",
             "createError": "Error while creating event",
             "locationSearchError": "Error while searching for locations",
-            "locationExists": "Existing location selected ✅",
-            "locationCreated": "Location “{{name}}” added and selected ✅",
+            "locationExists": "Existing location selected",
+            "locationCreated": "Location “{{name}}” added and selected",
             "locationInvalid": "Could not validate this location",
             "locationReset": "Selection canceled"
         }
@@ -46,15 +46,24 @@
         "back": "Back",
         "type": "Type",
         "date": "Date",
-        "attendees": "attendee(s)",
-        "leave": "Leave event",
-        "join": "Join event",
+        "attendees": "attendees",
+        "join": "Join",
+        "leave": "Leave",
+        "goToChat": "View discussion",
+        "edit": "Edit event",
+        "delete": "Delete event",
+        "confirmDelete": "Delete this event? This action is irreversible.",
         "toast": {
-            "loadError": "Failed to load event",
-            "leaveError": "Error while leaving event",
-            "left": "You left the event.",
-            "joinError": "Error while joining event",
-            "joined": "You're now participating 🎉"
+            "left": "You have left the event.",
+            "joined": "You have joined the event.",
+            "joinError": "Failed to join the event.",
+            "leaveError": "Failed to leave the event.",
+            "deleted": "Event deleted.",
+            "deleteError": "Error while deleting the event.",
+            "loadError": "Error loading the event.",
+            "notFound": "Event not found.",
+            "updated": "Event updated.",
+            "updateError": "Error while updating the event."
         }
     },
     "home": {
@@ -164,7 +173,10 @@
         "profile": "Profile"
     },
     "auth": {
-    "logout": "Logout",
-    "logoutSuccess": "Successfully logged out"
-  }
+        "logout": "Logout",
+        "logoutSuccess": "Successfully logged out"
+    },
+    "common": {
+        "cancel": "Cancel"
+    }
 }

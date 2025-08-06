@@ -34,8 +34,8 @@
             "created": "Événement créé 🎉",
             "createError": "Erreur lors de la création",
             "locationSearchError": "Erreur lors de la recherche de lieux",
-            "locationExists": "Lieu existant sélectionné ✅",
-            "locationCreated": "Lieu “{{name}}” ajouté et sélectionné ✅",
+            "locationExists": "Lieu existant sélectionné",
+            "locationCreated": "Lieu “{{name}}” ajouté et sélectionné",
             "locationInvalid": "Impossible de valider ce lieu",
             "locationReset": "Sélection annulée"
         }
@@ -46,15 +46,24 @@
         "back": "Retour",
         "type": "Type",
         "date": "Date",
-        "attendees": "participant(s)",
-        "leave": "Quitter l'événement",
-        "join": "Je participe",
+        "attendees": "participants",
+        "join": "Rejoindre",
+        "leave": "Quitter",
+        "goToChat": "Voir la discussion",
+        "edit": "Modifier l'événement",
+        "delete": "Supprimer l'événement",
+        "confirmDelete": "Supprimer cet événement ? Cette action est irréversible.",
         "toast": {
-            "loadError": "Erreur de chargement de l'événement",
-            "leaveError": "Erreur lors de la désinscription",
-            "left": "Tu as quitté l’événement.",
-            "joinError": "Erreur lors de l’inscription",
-            "joined": "Tu participes maintenant 🎉"
+            "left": "Vous avez quitté l'événement.",
+            "joined": "Vous avez rejoint l'événement.",
+            "joinError": "Erreur lors de la tentative de rejoindre.",
+            "leaveError": "Erreur lors de la tentative de quitter.",
+            "deleted": "Événement supprimé.",
+            "deleteError": "Erreur lors de la suppression.",
+            "loadError": "Erreur de chargement de l'événement.",
+            "notFound": "Événement introuvable.",
+            "updated": "Événement mis à jour.",
+            "updateError": "Erreur lors de la mise à jour."
         }
     },
     "home": {
@@ -100,7 +109,8 @@
         }
     },
     "map": {
-        "loading": "Chargement carte..."
+        "loading": "Chargement carte...",
+        "invalid_coordinates": "Coordonées invalides"
     },
     "register": {
         "title": "Créer un compte",
@@ -163,7 +173,10 @@
         "profile": "Profil"
     },
     "auth": {
-    "logout": "Déconnexion",
-    "logoutSuccess": "Déconnexion réussie"
-  }
+        "logout": "Déconnexion",
+        "logoutSuccess": "Déconnexion réussie"
+    },
+    "common": {
+        "cancel": "Annuler"
+    }
 }
