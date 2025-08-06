@@ -174,7 +174,10 @@ const CreateEvent = () => {
                   const created = await api.post("/locations", {
                     name: place.name,
                     address: place.address,
-                    coordinates: place.coordinates,
+                    coordinates: {
+                      lat: place.coordinates.lat,
+                      lng: place.coordinates.lng,
+                    },
                   });
 
                   setForm((prev) => ({ ...prev, locationId: created.data._id }));
