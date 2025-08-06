@@ -59,16 +59,23 @@ const Home = () => {
 
         {/* 🗺️ Map */}
         {position && typeof position.lat === "number" && typeof position.lng === "number" && (
-          <MapWithMarkers
-            markers={events
-              .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
-              .map(e => ({
-                lat: Number(e.location.coordinates.coordinates[1]),
-                lng: Number(e.location.coordinates.coordinates[0]),
-              }))}
-            fallbackLat={position.lat}
-            fallbackLng={position.lng}
-          />
+          <motion.div 
+          className="w-full max-w-md"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}>
+            <MapWithMarkers
+              markers={events
+                .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
+                .map(e => ({
+                  lat: Number(e.location.coordinates.coordinates[1]),
+                  lng: Number(e.location.coordinates.coordinates[0]),
+                }))}
+              fallbackLat={position.lat}
+              fallbackLng={position.lng}
+              zoom={10}
+            />
+          </motion.div>
         )}
 
         {/* 👤 User greeting */}

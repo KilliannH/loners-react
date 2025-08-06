@@ -100,7 +100,8 @@
     }
   },
   "map": {
-    "loading": "Cargando mapa..."
+    "loading": "Cargando mapa...",
+        "invalid_coordinates": "Coordenadas no válidas"
   },
   "register": {
     "title": "Crear una cuenta",

@@ -100,7 +100,8 @@
         }
     },
     "map": {
-        "loading": "Loading map..."
+        "loading": "Loading map...",
+        "invalid_coordinates": "Invalid coordinates"
     },
     "register": {
         "title": "Create an account",

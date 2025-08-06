@@ -10,21 +10,21 @@ const containerStyle = {
 const isValidLatLng = (lat, lng) =>
   typeof lat === "number" && !isNaN(lat) && typeof lng === "number" && !isNaN(lng);
 
-const MapWithMarkers = ({ markers = [], fallbackLat, fallbackLng }) => {
+const MapWithMarkers = ({ markers = [], fallbackLat, fallbackLng, zoom = 13 }) => {
   const { t } = useTranslation();
 
   const center = isValidLatLng(fallbackLat, fallbackLng)
     ? { lat: fallbackLat, lng: fallbackLng }
     : null;
 
-  if (!center) return <p className="text-red-500">🛑 Invalid coordinates</p>;
+  if (!center) return <p className="text-red-500">🛑 {t("map.invalid_coordinates")}</p>;
 
   return (
     <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <div style={containerStyle}>
         <Map
           defaultCenter={center}
-          defaultZoom={10}
+          defaultZoom={zoom}
           mapId="YOUR_MAP_ID" // facultatif, utile pour activer des styles ou advanced markers
           disableDefaultUI
         >

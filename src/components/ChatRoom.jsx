@@ -104,7 +104,7 @@ const ChatRoom = () => {
       </div>
 
       <motion.div
-        className="p-2 border-t flex gap-2"
+        className="p-2 pb-5 border-t flex gap-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
