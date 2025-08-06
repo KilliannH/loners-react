@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 const containerStyle = {
   width: "100%",
   height: "200px",
-  borderRadius: '0.5rem', // ~12px (tailwind 'rounded-xl')
-  overflow: 'hidden', // Pour s'assurer que la map respecte l'arrondi
+  borderRadius: '0.75rem', // Tailwind 'rounded-xl'
+  overflow: 'hidden',
 };
 
 const isValidLatLng = (lat, lng) =>
@@ -26,14 +26,18 @@ const MapWithMarkers = ({ markers = [], fallbackLat, fallbackLng, zoom = 13 }) =
         <Map
           defaultCenter={center}
           defaultZoom={zoom}
-          mapId="YOUR_MAP_ID" // facultatif, utile pour activer des styles ou advanced markers
+          mapId="YOUR_MAP_ID"
           disableDefaultUI
         >
           {markers
             .filter((m) => isValidLatLng(m.lat, m.lng))
             .map((m, i) => (
               <AdvancedMarker key={i} position={{ lat: m.lat, lng: m.lng }}>
-                <Pin />
+                <Pin
+                  background={m.isUser ? '#2563eb' : undefined}
+                  borderColor={m.isUser ? '#1e40af' : undefined}
+                  glyphColor={m.isUser ? '#1e40af' : undefined}
+                />
               </AdvancedMarker>
             ))}
         </Map>

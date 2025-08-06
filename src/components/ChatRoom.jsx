@@ -72,63 +72,92 @@ const ChatRoom = () => {
   }, [messages]);
 
   return (
-    <motion.div
-      className="flex flex-col h-[calc(100vh-100px)] max-w-md mx-auto"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
-    >
-      <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
-        <AnimatePresence initial={false}>
-          {messages.map((msg, i) => (
+  <motion.div
+    className="flex flex-col h-[calc(100vh-100px)] max-w-md mx-auto"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.4 }}
+  >
+    <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2 overflow-x-hidden break-words scrollbar-hide">
+      <AnimatePresence initial={false}>
+        {messages.map((msg, i) => {
+          const isCurrentUser = msg.sender._id === user._id;
+          const prevMsg = messages[i - 1];
+          const showAvatar = !prevMsg || prevMsg.sender._id !== msg.sender._id;
+
+          return (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className={`max-w-xs px-3 py-2 rounded-lg ${
-                msg.sender._id === user._id
-                  ? "bg-black text-white self-end"
-                  : "bg-gray-100 text-black self-start"
-              }`}
+              className={`flex items-end gap-2 ${isCurrentUser ? "justify-end" : "justify-start"}`}
             >
-              <p className="text-sm">{msg.text}</p>
-              <p className="text-[10px] mt-1 text-gray-400">
-                {msg.sender?.username || t("chat.unknown")}
-              </p>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-        <div ref={messagesEndRef} />
-      </div>
+              {/* Avatar à gauche pour les autres */}
+              {!isCurrentUser && showAvatar && msg.sender?.avatarUrl && (
+                <img
+                  src={msg.sender.avatarUrl}
+                  alt="avatar"
+                  className="w-8 h-8 rounded-full object-cover border"
+                />
+              )}
 
-      <motion.div
-        className="p-2 pb-5 border-t flex gap-2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+              <div
+                className={`max-w-xs px-3 py-2 rounded-lg ${
+                  isCurrentUser
+                    ? "bg-blue-600 text-white self-end"
+                    : "bg-gray-100 text-black self-start"
+                }`}
+              >
+                <p className="text-sm break-words">{msg.text}</p>
+                <p className="text-[10px] mt-1 text-gray-200">
+                  {msg.sender?.username || t("chat.unknown")}
+                </p>
+              </div>
+
+              {/* Avatar à droite pour l'utilisateur connecté */}
+              {isCurrentUser && showAvatar && user.avatarUrl && (
+                <img
+                  src={user.avatarUrl}
+                  alt="avatar"
+                  className="w-8 h-8 rounded-full object-cover border"
+                />
+              )}
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
+      <div ref={messagesEndRef} />
+    </div>
+
+    <motion.div
+      className="p-2 pb-5 border-t flex gap-2"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+    >
+      <motion.input
+        value={input}
+        maxLength={300}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+        placeholder={t("chat.inputPlaceholder")}
+        className="flex-1 border border-blue-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        whileFocus={{ scale: 1.01 }}
+      />
+      <motion.button
+        onClick={sendMessage}
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <motion.input
-          value={input}
-          maxLength={300}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-          placeholder={t("chat.inputPlaceholder")}
-          className="flex-1 border rounded px-3 py-2"
-          whileFocus={{ scale: 1.01 }}
-        />
-        <motion.button
-          onClick={sendMessage}
-          className="bg-black text-white px-4 py-2 rounded"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {t("chat.send")}
-        </motion.button>
-      </motion.div>
+        {t("chat.send")}
+      </motion.button>
     </motion.div>
-  );
+  </motion.div>
+);
+
 };
 
 export default ChatRoom;

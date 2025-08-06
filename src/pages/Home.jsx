@@ -65,16 +65,24 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}>
             <MapWithMarkers
-              markers={events
-                .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
-                .map(e => ({
-                  lat: Number(e.location.coordinates.coordinates[1]),
-                  lng: Number(e.location.coordinates.coordinates[0]),
-                }))}
-              fallbackLat={position.lat}
-              fallbackLng={position.lng}
-              zoom={10}
-            />
+  markers={[
+    ...(events
+      .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
+      .map(e => ({
+        lat: Number(e.location.coordinates.coordinates[1]),
+        lng: Number(e.location.coordinates.coordinates[0]),
+        isUser: false,
+      }))),
+    {
+      lat: position.lat,
+      lng: position.lng,
+      isUser: true, // 🟦 Marqueur spécial
+    }
+  ]}
+  fallbackLat={position.lat}
+  fallbackLng={position.lng}
+  zoom={10}
+/>
           </motion.div>
         )}
 

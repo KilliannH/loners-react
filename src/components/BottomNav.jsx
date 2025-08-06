@@ -27,8 +27,7 @@ const BottomNav = () => {
           key={to}
           to={to}
           className={({ isActive }) =>
-            `flex flex-col items-center text-xs relative ${
-              isActive ? "text-black font-semibold" : "text-gray-400"
+            `flex flex-col items-center text-xs relative ${isActive ? "text-black font-semibold" : "text-gray-400"
             }`
           }
         >
@@ -45,9 +44,9 @@ const BottomNav = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center leading-none"
+                  className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] rounded-full min-w-4 h-4 px-1 flex items-center justify-center leading-none"
                 >
-                  {total}
+                  {total > 99 ? "99+" : total}
                 </motion.span>
               </AnimatePresence>
             )}
