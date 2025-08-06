@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 const containerStyle = {
   width: "100%",
   height: "200px",
-  borderRadius: "0.5rem",
+  borderRadius: '0.5rem', // ~12px (tailwind 'rounded-xl')
+  overflow: 'hidden', // Pour s'assurer que la map respecte l'arrondi
 };
 
 const isValidLatLng = (lat, lng) =>

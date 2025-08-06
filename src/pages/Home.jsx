@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center min-h-[calc(100vh-80px)] px-4 py-6 space-y-6">
+      <div className="flex flex-col justify-start items-center min-h-[calc(100vh-80px)] px-4 py-6 space-y-6">
 
         {/* 🗺️ Map */}
         {position && typeof position.lat === "number" && typeof position.lng === "number" && (

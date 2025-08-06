@@ -14,6 +14,9 @@ import EventDetail from "../pages/EventDetail";
 import ChatRoom from "../components/ChatRoom";
 import ChatRooms from "../pages/ChatRooms";
 import EditEvent from "../pages/EditEvent";
+import LegalTerms from "../pages/LegalTerms";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import CookiePolicy from "../pages/CookiePolicy";
 
 const AppRoutes = () => {
   useIdentifySocket();
@@ -26,6 +29,9 @@ const AppRoutes = () => {
   return (<Routes>
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
+    <Route path="/legal-terms" element={<LegalTerms />} />
+    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    <Route path="/cookies" element={<CookiePolicy />} />
     <Route path="/" element={
       <PrivateRoute>
         <Home />
