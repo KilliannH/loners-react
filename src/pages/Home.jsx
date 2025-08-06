@@ -59,30 +59,30 @@ const Home = () => {
 
         {/* 🗺️ Map */}
         {position && typeof position.lat === "number" && typeof position.lng === "number" && (
-          <motion.div 
-          className="w-full max-w-md"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}>
+          <motion.div
+            className="w-full max-w-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}>
             <MapWithMarkers
-  markers={[
-    ...(events
-      .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
-      .map(e => ({
-        lat: Number(e.location.coordinates.coordinates[1]),
-        lng: Number(e.location.coordinates.coordinates[0]),
-        isUser: false,
-      }))),
-    {
-      lat: position.lat,
-      lng: position.lng,
-      isUser: true, // 🟦 Marqueur spécial
-    }
-  ]}
-  fallbackLat={position.lat}
-  fallbackLng={position.lng}
-  zoom={10}
-/>
+              markers={[
+                ...(events
+                  .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
+                  .map(e => ({
+                    lat: Number(e.location.coordinates.coordinates[1]),
+                    lng: Number(e.location.coordinates.coordinates[0]),
+                    isUser: false,
+                  }))),
+                {
+                  lat: position.lat,
+                  lng: position.lng,
+                  isUser: true, // 🟦 Marqueur spécial
+                }
+              ]}
+              fallbackLat={position.lat}
+              fallbackLng={position.lng}
+              zoom={10}
+            />
           </motion.div>
         )}
 
@@ -142,9 +142,10 @@ const Home = () => {
                 () => toast.error(t("home.toast.geolocRefreshError"))
               )
             }
-            className="text-sm text-blue-600 hover:underline"
+            className="text-sm text-blue-600 hover:underline flex items-center gap-1"
           >
-            📍 {t("home.refreshPosition")}
+            <MapPin size={16} className="inline" />
+            {t("home.refreshPosition")}
           </button>
         </motion.div>
 
