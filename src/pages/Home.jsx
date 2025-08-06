@@ -33,6 +33,19 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [typeFilter, setTypeFilter] = useState("all");
   const [position, setPosition] = useState(null);
+  const [visibleMarkers, setVisibleMarkers] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [isFetchingMore, setIsFetchingMore] = useState(false);
+  const [totalEvents, setTotalEvents] = useState(0);
+  const [page, setPage] = useState(0);
+  const pageSize = 30;
+
+  useEffect(() => {
+    if (events.length > 0) {
+      const firstGroup = groupEvents(events, 3)[0] || [];
+      setVisibleMarkers(firstGroup);
+    }
+  }, [events]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -46,29 +59,60 @@ const Home = () => {
     );
   }, [t]);
 
-  const fetchNearbyEvents = async () => {
+  const fetchNearbyEvents = async (newPage = 0) => {
     if (!position) return;
-    setLoading(true);
+
+    if (newPage === 0) {
+      setLoading(true); // Premier chargement
+    } else {
+      setIsFetchingMore(true); // Scroll vers la fin
+    }
+
     try {
       const res = await api.get("/events/nearby", {
-        params: { lat: position.lat, lng: position.lng },
+        params: {
+          lat: position.lat,
+          lng: position.lng,
+          offset: newPage * pageSize,
+          limit: pageSize,
+          type: typeFilter !== "all" ? typeFilter : undefined,
+        },
       });
 
-      let filtered = res.data;
-      if (typeFilter !== "all") {
-        filtered = filtered.filter((ev) => ev.type === typeFilter);
+      const newEvents = res.data.events || [];
+      setTotalEvents(res.data.total || 0);
+
+      if (newPage === 0) {
+        setEvents(newEvents);
+      } else {
+        setEvents((prev) => [...prev, ...newEvents]);
       }
-      setEvents(filtered);
-    } catch {
+
+      setHasMore(res.data.hasMore);
+      setPage(newPage);
+    } catch (err) {
       toast.error(t("home.toast.fetchError"));
     } finally {
       setLoading(false);
+      setIsFetchingMore(false);
     }
   };
+
 
   useEffect(() => {
     fetchNearbyEvents();
   }, [position, typeFilter]);
+
+  const handleSlideChange = (_, { currentSlide }) => {
+  const grouped = groupEvents(events, 3);
+  const currentGroup = grouped[currentSlide] || [];
+
+  setVisibleMarkers(currentGroup);
+
+  if (hasMore && currentSlide >= grouped.length - 1) {
+    fetchNearbyEvents(page + 1);
+  }
+};
 
   return (
     <>
@@ -83,18 +127,16 @@ const Home = () => {
             transition={{ delay: 0.2 }}>
             <MapWithMarkers
               markers={[
-                ...(events
-                  .filter(e => Array.isArray(e?.location?.coordinates?.coordinates))
-                  .map(e => ({
-                    lat: Number(e.location.coordinates.coordinates[1]),
-                    lng: Number(e.location.coordinates.coordinates[0]),
-                    isUser: false,
-                  }))),
+                ...visibleMarkers.map(e => ({
+                  lat: Number(e.location.coordinates.coordinates[1]),
+                  lng: Number(e.location.coordinates.coordinates[0]),
+                  isUser: false,
+                })),
                 {
                   lat: position.lat,
                   lng: position.lng,
-                  isUser: true, // 🟦 Marqueur spécial
-                }
+                  isUser: true,
+                },
               ]}
               fallbackLat={position.lat}
               fallbackLng={position.lng}
@@ -167,8 +209,12 @@ const Home = () => {
         </motion.div>
 
         {/* 📅 Events list */}
+        {!loading && totalEvents > 0 && (
+          <p className="text-sm text-gray-500">{t("home.totalFound", { count: totalEvents })}</p>
+        )}
         <div className="w-full max-w-md relative pb-10">
           <Carousel
+            afterChange={handleSlideChange}
             responsive={responsive}
             arrows={false}
             showDots={true}
@@ -200,6 +246,11 @@ const Home = () => {
             ))}
           </Carousel>
         </div>
+        {isFetchingMore && (
+          <div className="flex justify-center mt-4">
+            <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        )}
       </div>
 
       {/* ➕ Create Event Button */}

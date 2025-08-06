@@ -76,6 +76,7 @@
         "noEvents": "No events found nearby.",
         "attendees": "attendee(s)",
         "createEvent": "Create an event",
+        "totalFound": "{{count}} event(s) found nearby",
         "toast": {
             "geolocError": "Couldn't get your position 📍",
             "geolocRefreshError": "Unable to get location",

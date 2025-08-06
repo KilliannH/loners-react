@@ -4,7 +4,12 @@
         "loading": "Chargement...",
         "noRooms": "Aucune room disponible.",
         "unreadMessages": "{{count}} message non lu",
-        "unreadMessages_plural": "{{count}} messages non lus"
+        "unreadMessages_plural": "{{count}} messages non lus",
+        "seo": {
+            "title": "Mes salons de discussion - Loners",
+            "description": "Retrouvez tous vos salons de discussion liés aux événements rejoints sur Loners."
+
+        }
     },
     "createEvent": {
         "title": "Créer un événement",
@@ -38,6 +43,10 @@
             "locationCreated": "Lieu “{{name}}” ajouté et sélectionné",
             "locationInvalid": "Impossible de valider ce lieu",
             "locationReset": "Sélection annulée"
+        },
+        "seo": {
+            "title": "Créer un événement - Loners",
+            "description": "Organisez votre propre événement en quelques clics."
         }
     },
     "eventDetail": {
@@ -64,6 +73,9 @@
             "notFound": "Événement introuvable.",
             "updated": "Événement mis à jour.",
             "updateError": "Erreur lors de la mise à jour."
+        }, "seo": {
+            "title": "Détails de l’événement - Loners",
+            "description": "Consultez les infos d’un événement, rejoignez-le, accédez au chat et retrouvez les participants."
         }
     },
     "home": {
@@ -76,10 +88,15 @@
         "noEvents": "Aucun événement trouvé à proximité.",
         "attendees": "participant(s)",
         "createEvent": "Créer un événement",
+        "totalFound": "{{count}} événement(s) trouvé(s) autour",
         "toast": {
             "geolocError": "Impossible d'obtenir la position 📍",
             "geolocRefreshError": "Géoloc impossible",
             "fetchError": "Erreur de récupération des événements"
+        },
+        "seo": {
+            "title": "Événements proches de vous - Loners",
+            "description": "Découvrez les concerts, festivals et soirées autour de vous avec Loners. Filtrez par type et explorez sur la carte."
         }
     },
     "profile": {
@@ -91,6 +108,10 @@
         "attendees": "participant(s)",
         "toast": {
             "fetchError": "Impossible de charger vos événements"
+        },
+        "seo": {
+            "title": "Mon profil - Loners",
+            "description": "Accédez à votre profil, vos événements créés ou rejoints, et gérez votre expérience Loners."
         }
     },
     "updateProfile": {
@@ -106,6 +127,9 @@
         "toast": {
             "success": "Profil mis à jour !",
             "error": "Erreur lors de la mise à jour"
+        },"seo": {
+            "title": "Modifier mon profil - Loners",
+"description": "Mettez à jour votre nom d’utilisateur ou votre avatar pour personnaliser votre profil Loners."
         }
     },
     "map": {
@@ -130,6 +154,10 @@
         "toast": {
             "success": "Inscription réussie 🎉",
             "error": "Erreur d'inscription"
+        }, "seo": {
+            "title": "Créer un compte - Loners",
+            "description": "Rejoignez Loners pour participer à des événements proches de vous et discuter avec d'autres participants."
+
         }
     },
     "login": {
@@ -148,6 +176,10 @@
         "toast": {
             "success": "Connexion réussie 👋",
             "error": "Erreur de connexion, veuillez réessayer"
+        }, "seo": {
+            "title": "Connexion - Loners",
+"description": "Connectez-vous à votre compte Loners pour retrouver vos événements et salons de discussion."
+
         }
     },
     "header": {
@@ -177,7 +209,13 @@
     "legal": {
         "terms": "Conditions générales",
         "privacy": "Politique de confidentialité",
-        "cookies": "Politique de cookies"
+        "cookies": "Politique de cookies",
+        "terms.seo.title": "Conditions générales d’utilisation - Loners",
+        "terms.seo.description": "Lisez les conditions d’utilisation du service Loners : compte, accès, données et résiliation.",
+        "privacy.seo.title": "Politique de confidentialité - Loners",
+        "privacy.seo.description": "Découvrez comment nous collectons, stockons et utilisons vos données personnelles sur Loners.",
+        "cookies.seo.title": "Politique de cookies - Loners",
+        "cookies.seo.description": "En savoir plus sur l’utilisation des cookies sur le site Loners et comment les désactiver."
     },
     "auth": {
         "logout": "Déconnexion",
