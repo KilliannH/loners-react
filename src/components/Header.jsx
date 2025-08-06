@@ -37,7 +37,7 @@ const Header = () => {
             >
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <Link to="/home" className="flex items-center gap-2">
+                    <Link to="/" className="flex items-center gap-2">
                         <img src={logo} alt="Loners logo" className="h-10 w-auto" />
                         <span className="text-lg font-bold tracking-wide">Loners</span>
                     </Link>

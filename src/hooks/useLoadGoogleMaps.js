@@ -4,7 +4,7 @@ export const useLoadGoogleMaps = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (window.google && window.google.maps) {
+    if (window.google?.maps?.places) {
       setLoaded(true);
       return;
     }
@@ -13,8 +13,18 @@ export const useLoadGoogleMaps = () => {
     script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&libraries=places`;
     script.async = true;
     script.defer = true;
-    script.onload = () => setLoaded(true);
-    script.onerror = () => console.error("❌ Erreur chargement Google Maps");
+
+    script.onload = () => {
+      if (window.google?.maps?.places) {
+        setLoaded(true);
+      } else {
+        console.error("❌ Google Maps loaded but places library is missing");
+      }
+    };
+
+    script.onerror = () => {
+      console.error("❌ Failed to load Google Maps script");
+    };
 
     document.head.appendChild(script);
   }, []);
