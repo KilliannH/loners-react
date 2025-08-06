@@ -25,6 +25,8 @@ export default function CustomHelmet({ titleKey, descriptionKey, path = "", titl
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:image" content={baseUrl + "/og-image.png"} />
+            <meta name="twitter:title" content={finalTitle} />
+            <meta name="twitter:description" content={finalDescription} />
 
             {/* Canonical & hreflang */}
             <link rel="canonical" href={fullUrl} />

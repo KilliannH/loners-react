@@ -7,6 +7,7 @@ import MapWithMarkers from "../components/MapWithMarkers";
 import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, ArrowLeft, Pencil, MapPin, UserPlus, XCircle, MessageCircle } from "lucide-react";
 import CustomHelmet from "../components/CustomHelmet";
+import EventJsonLd from "../components/EventJsonLd";
 import { useTranslation } from "react-i18next";
 
 const EventDetail = () => {
@@ -89,6 +90,7 @@ const EventDetail = () => {
                           titleKey="eventDetail.seo.title"
                           descriptionKey="eventDetail.seo.description"
                         />
+      <EventJsonLd event={event} />
       <motion.div
         className="max-w-md mx-auto p-4 space-y-4"
         initial={{ opacity: 0, y: 10 }}

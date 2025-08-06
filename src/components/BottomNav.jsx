@@ -10,8 +10,8 @@ const BottomNav = () => {
   const { t } = useTranslation();
 
   const navItems = [
-    { to: "/", icon: Home, labelKey: "nav.home" },
     { to: "/chat", icon: MessageSquare, labelKey: "nav.chat" },
+    { to: "/home", icon: Home, labelKey: "nav.home" },
     { to: "/profile", icon: User, labelKey: "nav.profile" },
   ];
 

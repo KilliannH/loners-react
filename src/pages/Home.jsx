@@ -105,22 +105,22 @@ const Home = () => {
   }, [position, typeFilter]);
 
   const handleSlideChange = (_, { currentSlide }) => {
-  const grouped = groupEvents(events, 3);
-  const currentGroup = grouped[currentSlide] || [];
+    const grouped = groupEvents(events, 3);
+    const currentGroup = grouped[currentSlide] || [];
 
-  setVisibleMarkers(currentGroup);
+    setVisibleMarkers(currentGroup);
 
-  if (hasMore && currentSlide >= grouped.length - 1) {
-    fetchNearbyEvents(page + 1);
-  }
-};
+    if (hasMore && currentSlide >= grouped.length - 1) {
+      fetchNearbyEvents(page + 1);
+    }
+  };
 
   return (
     <>
-    <CustomHelmet
-                          titleKey="home.seo.title"
-                          descriptionKey="home.seo.description"
-                        />
+      <CustomHelmet
+        titleKey="home.seo.title"
+        descriptionKey="home.seo.description"
+      />
       <div className="flex flex-col justify-start items-center min-h-[calc(100vh-80px)] pb-10 px-4 py-6 space-y-6">
 
         {/* 🗺️ Map */}
@@ -168,7 +168,7 @@ const Home = () => {
           )}
           <div>
             <h2 className="text-lg font-semibold">
-              {t("home.greeting", { username: user?.username })}
+              {t("home.greeting", { username: user?.username })} 👋
             </h2>
             <p className="text-sm text-gray-500">{t("home.subtitle")}</p>
           </div>
@@ -237,10 +237,12 @@ const Home = () => {
                   <div
                     key={event._id}
                     onClick={() => navigate(`/events/${event._id}`)}
-                    className="bg-white rounded-xl shadow p-4 border hover:shadow-md transition cursor-pointer"
+                    className="bg-white rounded-xl shadow p-4 border hover:shadow-md transition cursor-pointer min-h-[140px]"
                   >
                     <h3 className="text-lg font-bold">{event.name}</h3>
-                    <p className="text-sm text-gray-600">{event.description}</p>
+                    <p className="text-sm text-gray-600">{event.description.length > 150
+                      ? event.description.slice(0, 150) + "..."
+                      : event.description}</p>
                     <p className="text-xs text-gray-400 mt-1 flex items-center gap-1">
                       <Users size={12} />
                       {event.attendees?.length || 0} {t("home.attendees")}
@@ -260,12 +262,13 @@ const Home = () => {
 
       {/* ➕ Create Event Button */}
       <button
-        onClick={() => navigate("/create")}
-        className="fixed bottom-20 right-4 bg-black text-white rounded-full w-14 h-14 text-2xl shadow-lg flex items-center justify-center hover:bg-gray-800 transition"
-        aria-label={t("home.createEvent")}
-      >
-        +
-      </button>
+  onClick={() => navigate("/create")}
+  className="fixed bottom-20 right-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full w-16 h-16 text-3xl shadow-[0_4px_20px_rgba(99,102,241,0.4)] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out"
+  aria-label={t("home.createEvent")}
+>
+  +
+</button>
+
     </>
   );
 };

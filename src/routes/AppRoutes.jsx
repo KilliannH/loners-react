@@ -17,6 +17,7 @@ import EditEvent from "../pages/EditEvent";
 import LegalTerms from "../pages/LegalTerms";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import CookiePolicy from "../pages/CookiePolicy";
+import Landing from "../pages/Landing";
 
 const AppRoutes = () => {
   useIdentifySocket();
@@ -27,12 +28,13 @@ const AppRoutes = () => {
   useChatNotifications(currentEventId);
 
   return (<Routes>
+    <Route path="/" element={<Landing />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/legal-terms" element={<LegalTerms />} />
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/cookies" element={<CookiePolicy />} />
-    <Route path="/" element={
+    <Route path="/home" element={
       <PrivateRoute>
         <Home />
       </PrivateRoute>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- French Pages -->
+  <url>
+    <loc>https://loners.com/fr</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://loners.com/fr/create</loc>
+  </url>
+  <url>
+    <loc>https://loners.com/fr/profile</loc>
+  </url>
+  <url>
+    <loc>https://loners.com/fr/chat</loc>
+  </url>
+
+  <!-- English Pages -->
+  <url>
+    <loc>https://loners.com/en</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://loners.com/en/create</loc>
+  </url>
+  <url>
+    <loc>https://loners.com/en/profile</loc>
+  </url>
+  <url>
+    <loc>https://loners.com/en/chat</loc>
+  </url>
+
+  <!-- Spanish Pages -->
+  <url>
+    <loc>https://loners.com/es</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://loners.com/es/create</loc>
+  </url>
+  <url>
+    <loc>https://loners.com/es/profile</loc>
+  </url>
+  <url>
+    <loc>https://loners.com/es/chat</loc>
+  </url>
+</urlset>

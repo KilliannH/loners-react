@@ -125,7 +125,6 @@
             "title": "My profile - Loners",
             "description": "Access your profile, see your created or joined events, and manage your Loners experience."
         }
-
     },
     "updateProfile": {
         "title": "My Profile",
@@ -241,5 +240,39 @@
     },
     "legal.content": "**Site Editor**  \nLoners, published by Killiann Hervagault  \nAddress: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nEmail: support@loners.com  \nPublication director: Killiann Hervagault\n\n**Hosting**  \nThis site is hosted by Google Cloud Platform (GCP)  \nAddress: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelande  \n\n**Intellectual Property**  \nAll content on this site (texts, images, logos, etc.) is the exclusive property of Loners unless otherwise stated.\n\n**Disclaimer**  \nLoners cannot be held liable for any direct or indirect damage caused to the user's device when accessing the site.",
     "terms.content": "### 1. Purpose\nThese terms govern the use of the Loners platform by its users.\n\n### 2. Access to the service\nThe service is available for free with limited features. A subscription unlocks all features.\n\n### 3. User account\nThe user is responsible for the information provided and the confidentiality of their account.\n\n### 4. Personal data\nData is processed in accordance with our privacy policy. No data is shared with third parties without consent.\n\n### 5. Termination\nUsers may cancel their subscription at any time from their account page.\n\n### 6. Modifications\nLoners reserves the right to update these terms at any time.",
-    "privacy.content": "**Last updated: July 30, 2025**\n\n## 1. Data Collected\nWe collect the information you provide when registering (first name, last name, email), and data related to your use of the service (events, preferences, payments).\n\n## 2. Use of Data\nYour data is used only to:\n- Provide the Loners service\n- Improve the user experience\n- Manage payments and access\n\n## 3. Storage and Security\nYour data is stored securely and never sold. We use industry-standard security tools.\n\n## 4. Your Rights\nIn accordance with GDPR, you can request access to, modification, or deletion of your data at any time by contacting us at **support@loners.com**.\n\n## 5. Cookies\nLoners uses cookies to:\n- Improve navigation\n- Measure site traffic\nYou can disable cookies via your browser settings.\n\n## 6. Contact\nFor any questions about this policy, please reach out to:\n**support@loners.com**"
+    "privacy.content": "**Last updated: July 30, 2025**\n\n## 1. Data Collected\nWe collect the information you provide when registering (first name, last name, email), and data related to your use of the service (events, preferences, payments).\n\n## 2. Use of Data\nYour data is used only to:\n- Provide the Loners service\n- Improve the user experience\n- Manage payments and access\n\n## 3. Storage and Security\nYour data is stored securely and never sold. We use industry-standard security tools.\n\n## 4. Your Rights\nIn accordance with GDPR, you can request access to, modification, or deletion of your data at any time by contacting us at **support@loners.com**.\n\n## 5. Cookies\nLoners uses cookies to:\n- Improve navigation\n- Measure site traffic\nYou can disable cookies via your browser settings.\n\n## 6. Contact\nFor any questions about this policy, please reach out to:\n**support@loners.com**",
+    "landing": {
+        "hero": {
+            "title": "Meet, chat, and join events.",
+            "subtitle": "Loners connects you with nearby events and the people attending them.",
+            "cta": "Join Loners"
+        },
+        "features": {
+            "title": "Why choose Loners?",
+            "nearby": {
+                "title": "Nearby Events",
+                "desc": "Instantly discover events around you using geolocation."
+            },
+            "chat": {
+                "title": "Private Chat Rooms",
+                "desc": "Connect with other attendees before the event through dedicated chats."
+            },
+            "organize": {
+                "title": "Create Your Own Event",
+                "desc": "Easily organize a concert, a themed night, or a picnic in a few clicks."
+            }
+        },
+        "preview": {
+            "title": "A glimpse into the app",
+            "description": "Intuitive navigation, interactive maps, and real-time chat."
+        },
+        "cta": {
+            "title": "Ready to get started?",
+            "button": "Create a free account"
+        },
+        "seo": {
+            "title": "Loners – Local events & early access chat",
+            "description": "Find local events and connect with participants on Loners, the social platform for meeting around shared passions."
+        }
+    }
 }

@@ -6,16 +6,16 @@
     "unreadMessages": "{{count}} mensaje no leído",
     "unreadMessages_plural": "{{count}} mensajes no leídos",
     "seo": {
-            "title": "Mis salas de chat - Loners",
-            "description": "Encuentra todas tus salas de chat vinculadas a los eventos a los que te has unido en Loners."
-        }
+      "title": "Mis salas de chat - Loners",
+      "description": "Encuentra todas tus salas de chat vinculadas a los eventos a los que te has unido en Loners."
+    }
   },
   "chatRoom": {
-        "seo": {
-            "title": "Chat - Loners",
-            "description": "Chatea en tiempo real con los participantes del evento y comienza a conectar incluso antes de conocerse."
-        }
-    },
+    "seo": {
+      "title": "Chat - Loners",
+      "description": "Chatea en tiempo real con los participantes del evento y comienza a conectar incluso antes de conocerse."
+    }
+  },
   "createEvent": {
     "title": "Crear un evento",
     "fields": {
@@ -50,16 +50,16 @@
       "locationReset": "Selección cancelada"
     },
     "seo": {
-            "title": "Crear un evento - Loners",
-            "description": "Organiza tu propio evento en solo unos clics."
-        }
+      "title": "Crear un evento - Loners",
+      "description": "Organiza tu propio evento en solo unos clics."
+    }
   },
   "editEvent": {
-        "seo": {
-            "title": "Editar un evento - Loners",
-            "description": "Actualiza los detalles de tu evento fácilmente y gestiona tu comunidad."
-        }
-    },
+    "seo": {
+      "title": "Editar un evento - Loners",
+      "description": "Actualiza los detalles de tu evento fácilmente y gestiona tu comunidad."
+    }
+  },
   "eventDetail": {
     "loading": "Cargando...",
     "notFound": "Evento no encontrado",
@@ -86,9 +86,9 @@
       "updateError": "Error al actualizar el evento."
     },
     "seo": {
-            "title": "Detalles del evento - Loners",
-            "description": "Consulta la información del evento, únete, accede al chat y descubre quiénes participan."
-        }
+      "title": "Detalles del evento - Loners",
+      "description": "Consulta la información del evento, únete, accede al chat y descubre quiénes participan."
+    }
   },
   "home": {
     "greeting": "Hola {{username}}",
@@ -107,9 +107,9 @@
       "fetchError": "Error al obtener eventos"
     },
     "seo": {
-            "title": "Eventos cercanos - Loners",
-            "description": "Descubre conciertos, festivales y fiestas cerca de ti con Loners. Filtra por tipo y explora el mapa."
-        }
+      "title": "Eventos cercanos - Loners",
+      "description": "Descubre conciertos, festivales y fiestas cerca de ti con Loners. Filtra por tipo y explora el mapa."
+    }
   },
   "profile": {
     "edit": "Editar mi perfil",
@@ -122,9 +122,9 @@
       "fetchError": "Error al cargar tus eventos"
     },
     "seo": {
-            "title": "Mi perfil - Loners",
-            "description": "Accede a tu perfil, consulta los eventos que has creado o a los que te has unido y gestiona tu experiencia en Loners."
-        }
+      "title": "Mi perfil - Loners",
+      "description": "Accede a tu perfil, consulta los eventos que has creado o a los que te has unido y gestiona tu experiencia en Loners."
+    }
   },
   "updateProfile": {
     "title": "Mi perfil",
@@ -141,9 +141,9 @@
       "error": "Error al actualizar el perfil"
     },
     "seo": {
-            "title": "Editar mi perfil - Loners",
-            "description": "Actualiza tu nombre de usuario o avatar para personalizar tu perfil de Loners."
-        }
+      "title": "Editar mi perfil - Loners",
+      "description": "Actualiza tu nombre de usuario o avatar para personalizar tu perfil de Loners."
+    }
   },
   "map": {
     "loading": "Cargando mapa...",
@@ -169,9 +169,9 @@
       "error": "Error de registro"
     },
     "seo": {
-            "title": "Crear una cuenta - Loners",
-            "description": "Únete a Loners para participar en eventos cercanos y chatear con otros asistentes."
-        }
+      "title": "Crear una cuenta - Loners",
+      "description": "Únete a Loners para participar en eventos cercanos y chatear con otros asistentes."
+    }
   },
   "login": {
     "title": "Iniciar sesión",
@@ -191,9 +191,9 @@
       "error": "Error de inicio de sesión, inténtalo de nuevo"
     },
     "seo": {
-            "title": "Iniciar sesión - Loners",
-            "description": "Accede a tu cuenta de Loners para ver tus eventos y salas de chat."
-        }
+      "title": "Iniciar sesión - Loners",
+      "description": "Accede a tu cuenta de Loners para ver tus eventos y salas de chat."
+    }
   },
   "header": {
     "logout": "Cerrar sesión",
@@ -224,11 +224,11 @@
     "privacy": "Política de privacidad",
     "cookies": "Política de cookies",
     "terms.seo.title": "Términos de uso - Loners",
-        "terms.seo.description": "Lee los términos de uso del servicio Loners: cuenta, acceso, datos y cancelación.",
-        "privacy.seo.title": "Política de privacidad - Loners",
-        "privacy.seo.description": "Descubre cómo recopilamos, almacenamos y utilizamos tus datos personales en Loners.",
-        "cookies.seo.title": "Política de cookies - Loners",
-        "cookies.seo.description": "Obtén información sobre el uso de cookies en Loners y cómo desactivarlas."
+    "terms.seo.description": "Lee los términos de uso del servicio Loners: cuenta, acceso, datos y cancelación.",
+    "privacy.seo.title": "Política de privacidad - Loners",
+    "privacy.seo.description": "Descubre cómo recopilamos, almacenamos y utilizamos tus datos personales en Loners.",
+    "cookies.seo.title": "Política de cookies - Loners",
+    "cookies.seo.description": "Obtén información sobre el uso de cookies en Loners y cómo desactivarlas."
   },
   "auth": {
     "logout": "Cerrar sesión",
@@ -240,5 +240,39 @@
   },
   "legal.content": "**Editor del sitio**  \nLoners, publicado por Killiann Hervagault  \nDirección: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nCorreo electrónico: support@loners.com  \nDirector de la publicación: Killiann Hervagault\n\n**Alojamiento**  \nEste sitio está alojado por Google Cloud Platform (GCP)  \nDirección: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelanda  \n\n**Propiedad intelectual**  \nTodo el contenido de este sitio (textos, imágenes, logotipos, etc.) es propiedad exclusiva de Loners, salvo que se indique lo contrario.\n\n**Descargo de responsabilidad**  \nLoners no se responsabiliza de ningún daño directo o indirecto causado al dispositivo del usuario al acceder al sitio.",
   "terms.content": "### 1. Finalidad\nEstos términos rigen el uso de la plataforma Loners por parte de sus usuarios.\n\n### 2. Acceso al servicio\nEl servicio es gratuito con funciones limitadas. Una suscripción desbloquea todas las funciones.\n\n### 3. Cuenta de usuario\nEl usuario es responsable de la información proporcionada y de la confidencialidad de su cuenta.\n\n### 4. Datos personales\nLos datos se procesan de acuerdo con nuestra política de privacidad. No se comparten datos con terceros sin consentimiento.\n\n### 5. Cancelación\nLos usuarios pueden cancelar su suscripción en cualquier momento desde la página de su cuenta.\n\n### 6. Modificaciones\nLoners se reserva el derecho de actualizar estos términos en cualquier momento.",
-  "privacy.content": "**Última actualización: 30 de julio de 2025**\n\n## 1. Datos recopilados\nRecopilamos la información que proporciona al registrarse (nombre, apellido, correo electrónico) y los datos relacionados con su uso del servicio (eventos, preferencias, pagos).\n\n## 2. Uso de los datos\nSus datos se utilizan únicamente para:\n- Proporcionar el servicio Loners\n- Mejorar la experiencia del usuario\n- Gestionar pagos y accesos\n\n## 3. Almacenamiento y seguridad\nSus datos se almacenan de forma segura y nunca se venden. Utilizamos herramientas de seguridad estándar de la industria.\n\n## 4. Sus derechos\nDe acuerdo con el RGPD, puede solicitar acceso, modificación o eliminación de sus datos en cualquier momento contactándonos en **support@loners.com**.\n\n## 5. Cookies\nLoners utiliza cookies para:\n- Mejorar la navegación\n- Medir el tráfico del sitio\nPuede desactivar las cookies a través de la configuración de su navegador.\n\n## 6. Contacto\nSi tiene alguna pregunta sobre esta política, póngase en contacto con:\n**support@loners.com**"
+  "privacy.content": "**Última actualización: 30 de julio de 2025**\n\n## 1. Datos recopilados\nRecopilamos la información que proporciona al registrarse (nombre, apellido, correo electrónico) y los datos relacionados con su uso del servicio (eventos, preferencias, pagos).\n\n## 2. Uso de los datos\nSus datos se utilizan únicamente para:\n- Proporcionar el servicio Loners\n- Mejorar la experiencia del usuario\n- Gestionar pagos y accesos\n\n## 3. Almacenamiento y seguridad\nSus datos se almacenan de forma segura y nunca se venden. Utilizamos herramientas de seguridad estándar de la industria.\n\n## 4. Sus derechos\nDe acuerdo con el RGPD, puede solicitar acceso, modificación o eliminación de sus datos en cualquier momento contactándonos en **support@loners.com**.\n\n## 5. Cookies\nLoners utiliza cookies para:\n- Mejorar la navegación\n- Medir el tráfico del sitio\nPuede desactivar las cookies a través de la configuración de su navegador.\n\n## 6. Contacto\nSi tiene alguna pregunta sobre esta política, póngase en contacto con:\n**support@loners.com**",
+  "landing": {
+    "hero": {
+      "title": "Conoce, chatea y participa.",
+      "subtitle": "Loners te conecta con eventos cercanos y las personas que asisten.",
+      "cta": "Únete a Loners"
+    },
+    "features": {
+      "title": "¿Por qué elegir Loners?",
+      "nearby": {
+        "title": "Eventos Cercanos",
+        "desc": "Descubre eventos a tu alrededor al instante gracias a la geolocalización."
+      },
+      "chat": {
+        "title": "Salas de chat privadas",
+        "desc": "Habla con otros asistentes antes del evento en salas dedicadas."
+      },
+      "organize": {
+        "title": "Crea tu propio evento",
+        "desc": "Organiza fácilmente un concierto, una fiesta o un picnic en pocos clics."
+      }
+    },
+    "preview": {
+      "title": "Una vista previa de la app",
+      "description": "Navegación intuitiva, mapas interactivos y chat en tiempo real."
+    },
+    "cta": {
+      "title": "¿Listo para empezar?",
+      "button": "Crea una cuenta gratis"
+    },
+    "seo": {
+            "title": "Loners – Eventos locales y chat anticipado",
+            "description": "Encuentra eventos locales y conecta con los participantes en Loners, la plataforma social para reunirse en torno a pasiones compartidas."
+        }
+  }
 }
