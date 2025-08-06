@@ -4,8 +4,18 @@
     "loading": "Cargando...",
     "noRooms": "No hay salas disponibles.",
     "unreadMessages": "{{count}} mensaje no leído",
-    "unreadMessages_plural": "{{count}} mensajes no leídos"
+    "unreadMessages_plural": "{{count}} mensajes no leídos",
+    "seo": {
+            "title": "Mis salas de chat - Loners",
+            "description": "Encuentra todas tus salas de chat vinculadas a los eventos a los que te has unido en Loners."
+        }
   },
+  "chatRoom": {
+        "seo": {
+            "title": "Chat - Loners",
+            "description": "Chatea en tiempo real con los participantes del evento y comienza a conectar incluso antes de conocerse."
+        }
+    },
   "createEvent": {
     "title": "Crear un evento",
     "fields": {
@@ -38,8 +48,18 @@
       "locationCreated": "Ubicación “{{name}}” agregada y seleccionada",
       "locationInvalid": "No se pudo validar esta ubicación",
       "locationReset": "Selección cancelada"
-    }
+    },
+    "seo": {
+            "title": "Crear un evento - Loners",
+            "description": "Organiza tu propio evento en solo unos clics."
+        }
   },
+  "editEvent": {
+        "seo": {
+            "title": "Editar un evento - Loners",
+            "description": "Actualiza los detalles de tu evento fácilmente y gestiona tu comunidad."
+        }
+    },
   "eventDetail": {
     "loading": "Cargando...",
     "notFound": "Evento no encontrado",
@@ -64,7 +84,11 @@
       "notFound": "Evento no encontrado.",
       "updated": "Evento actualizado.",
       "updateError": "Error al actualizar el evento."
-    }
+    },
+    "seo": {
+            "title": "Detalles del evento - Loners",
+            "description": "Consulta la información del evento, únete, accede al chat y descubre quiénes participan."
+        }
   },
   "home": {
     "greeting": "Hola {{username}}",
@@ -81,7 +105,11 @@
       "geolocError": "No se pudo obtener tu ubicación 📍",
       "geolocRefreshError": "No se puede obtener la ubicación",
       "fetchError": "Error al obtener eventos"
-    }
+    },
+    "seo": {
+            "title": "Eventos cercanos - Loners",
+            "description": "Descubre conciertos, festivales y fiestas cerca de ti con Loners. Filtra por tipo y explora el mapa."
+        }
   },
   "profile": {
     "edit": "Editar mi perfil",
@@ -92,7 +120,11 @@
     "attendees": "asistente(s)",
     "toast": {
       "fetchError": "Error al cargar tus eventos"
-    }
+    },
+    "seo": {
+            "title": "Mi perfil - Loners",
+            "description": "Accede a tu perfil, consulta los eventos que has creado o a los que te has unido y gestiona tu experiencia en Loners."
+        }
   },
   "updateProfile": {
     "title": "Mi perfil",
@@ -107,7 +139,11 @@
     "toast": {
       "success": "¡Perfil actualizado!",
       "error": "Error al actualizar el perfil"
-    }
+    },
+    "seo": {
+            "title": "Editar mi perfil - Loners",
+            "description": "Actualiza tu nombre de usuario o avatar para personalizar tu perfil de Loners."
+        }
   },
   "map": {
     "loading": "Cargando mapa...",
@@ -131,7 +167,11 @@
     "toast": {
       "success": "Registro exitoso 🎉",
       "error": "Error de registro"
-    }
+    },
+    "seo": {
+            "title": "Crear una cuenta - Loners",
+            "description": "Únete a Loners para participar en eventos cercanos y chatear con otros asistentes."
+        }
   },
   "login": {
     "title": "Iniciar sesión",
@@ -149,7 +189,11 @@
     "toast": {
       "success": "Sesión iniciada con éxito 👋",
       "error": "Error de inicio de sesión, inténtalo de nuevo"
-    }
+    },
+    "seo": {
+            "title": "Iniciar sesión - Loners",
+            "description": "Accede a tu cuenta de Loners para ver tus eventos y salas de chat."
+        }
   },
   "header": {
     "logout": "Cerrar sesión",
@@ -178,7 +222,13 @@
   "legal": {
     "terms": "Condiciones generales",
     "privacy": "Política de privacidad",
-    "cookies": "Política de cookies"
+    "cookies": "Política de cookies",
+    "terms.seo.title": "Términos de uso - Loners",
+        "terms.seo.description": "Lee los términos de uso del servicio Loners: cuenta, acceso, datos y cancelación.",
+        "privacy.seo.title": "Política de privacidad - Loners",
+        "privacy.seo.description": "Descubre cómo recopilamos, almacenamos y utilizamos tus datos personales en Loners.",
+        "cookies.seo.title": "Política de cookies - Loners",
+        "cookies.seo.description": "Obtén información sobre el uso de cookies en Loners y cómo desactivarlas."
   },
   "auth": {
     "logout": "Cerrar sesión",

@@ -6,6 +6,7 @@ import api from "../services/api";
 import toast from "react-hot-toast";
 import socket from "../services/socket";
 import { motion, AnimatePresence } from "framer-motion";
+import CustomHelmet from "./CustomHelmet";
 import { useTranslation } from "react-i18next";
 
 const ChatRoom = () => {
@@ -72,6 +73,11 @@ const ChatRoom = () => {
   }, [messages]);
 
   return (
+  <>
+  <CustomHelmet
+        titleKey="chatRoom.seo.title"
+        descriptionKey="chatRoom.seo.description"
+      />
   <motion.div
     className="flex flex-col h-[calc(100vh-100px)] max-w-md mx-auto"
     initial={{ opacity: 0 }}
@@ -156,6 +162,7 @@ const ChatRoom = () => {
       </motion.button>
     </motion.div>
   </motion.div>
+  </>
 );
 
 };

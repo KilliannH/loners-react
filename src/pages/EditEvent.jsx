@@ -4,6 +4,7 @@ import api from "../services/api";
 import toast from "react-hot-toast";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import CustomHelmet from "../components/CustomHelmet";
 import { useTranslation } from "react-i18next";
 
 const EditEvent = () => {
@@ -56,6 +57,11 @@ const EditEvent = () => {
     if (loading) return <p className="p-4">{t("eventDetail.loading")}</p>;
 
     return (
+        <>
+        <CustomHelmet
+                      titleKey="editEvent.seo.title"
+                      descriptionKey="editEvent.seo.description"
+                    />
         <motion.div
             className="max-w-md mx-auto p-4 space-y-6"
             initial={{ opacity: 0, y: 10 }}
@@ -165,6 +171,7 @@ const EditEvent = () => {
                 </motion.button>
             </motion.form>
         </motion.div>
+        </>
     );
 };
 

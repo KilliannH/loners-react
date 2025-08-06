@@ -8,7 +8,12 @@
         "seo": {
             "title": "Mes salons de discussion - Loners",
             "description": "Retrouvez tous vos salons de discussion liés aux événements rejoints sur Loners."
-
+        }
+    },
+    "chatRoom": {
+        "seo": {
+            "title": "Chat - Loners",
+            "description": "Échangez en temps réel avec les participants de vos événements et créez du lien avant même de vous rencontrer."
         }
     },
     "createEvent": {
@@ -49,6 +54,12 @@
             "description": "Organisez votre propre événement en quelques clics."
         }
     },
+    "editEvent": {
+        "seo": {
+            "title": "Editer un événement - Loners",
+            "description": "Actualisez votre événement facilement."
+        }
+    },
     "eventDetail": {
         "loading": "Chargement...",
         "notFound": "Événement introuvable",
@@ -73,7 +84,8 @@
             "notFound": "Événement introuvable.",
             "updated": "Événement mis à jour.",
             "updateError": "Erreur lors de la mise à jour."
-        }, "seo": {
+        },
+        "seo": {
             "title": "Détails de l’événement - Loners",
             "description": "Consultez les infos d’un événement, rejoignez-le, accédez au chat et retrouvez les participants."
         }
@@ -127,9 +139,10 @@
         "toast": {
             "success": "Profil mis à jour !",
             "error": "Erreur lors de la mise à jour"
-        },"seo": {
+        },
+        "seo": {
             "title": "Modifier mon profil - Loners",
-"description": "Mettez à jour votre nom d’utilisateur ou votre avatar pour personnaliser votre profil Loners."
+            "description": "Mettez à jour votre nom d’utilisateur ou votre avatar pour personnaliser votre profil Loners."
         }
     },
     "map": {
@@ -154,10 +167,10 @@
         "toast": {
             "success": "Inscription réussie 🎉",
             "error": "Erreur d'inscription"
-        }, "seo": {
+        },
+        "seo": {
             "title": "Créer un compte - Loners",
             "description": "Rejoignez Loners pour participer à des événements proches de vous et discuter avec d'autres participants."
-
         }
     },
     "login": {
@@ -176,10 +189,10 @@
         "toast": {
             "success": "Connexion réussie 👋",
             "error": "Erreur de connexion, veuillez réessayer"
-        }, "seo": {
+        },
+        "seo": {
             "title": "Connexion - Loners",
-"description": "Connectez-vous à votre compte Loners pour retrouver vos événements et salons de discussion."
-
+            "description": "Connectez-vous à votre compte Loners pour retrouver vos événements et salons de discussion."
         }
     },
     "header": {

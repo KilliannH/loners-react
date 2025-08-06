@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import CustomHelmet from "../components/CustomHelmet";
 import { useTranslation } from "react-i18next";
 
 const UpdateProfile = () => {
@@ -40,6 +41,11 @@ const UpdateProfile = () => {
   };
 
   return (
+    <>
+    <CustomHelmet
+                                  titleKey="updateProfile.seo.title"
+                                  descriptionKey="updateProfile.seo.description"
+                                />
     <motion.div
       className="max-w-md mx-auto p-4 space-y-6"
       initial={{ opacity: 0, y: 20 }}
@@ -106,6 +112,7 @@ const UpdateProfile = () => {
         </button>
       </motion.form>
     </motion.div>
+    </>
   );
 };
 

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { MapPin, Users } from "lucide-react";
 import MapWithMarkers from "../components/MapWithMarkers";
 import { useTranslation } from "react-i18next";
+import CustomHelmet from "../components/CustomHelmet";
 import Carousel from "react-multi-carousel";
 
 const responsive = {
@@ -116,6 +117,10 @@ const Home = () => {
 
   return (
     <>
+    <CustomHelmet
+                          titleKey="home.seo.title"
+                          descriptionKey="home.seo.description"
+                        />
       <div className="flex flex-col justify-start items-center min-h-[calc(100vh-80px)] pb-10 px-4 py-6 space-y-6">
 
         {/* 🗺️ Map */}

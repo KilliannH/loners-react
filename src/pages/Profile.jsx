@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import CustomHelmet from "../components/CustomHelmet";
 import { useTranslation } from "react-i18next";
 
 const Profile = () => {
@@ -51,6 +52,11 @@ const Profile = () => {
   );
 
   return (
+    <>
+    <CustomHelmet
+                              titleKey="profile.seo.title"
+                              descriptionKey="profile.seo.description"
+                            />
     <motion.div
       className="max-w-md mx-auto p-4 space-y-6"
       initial={{ opacity: 0, y: 10 }}
@@ -164,6 +170,7 @@ const Profile = () => {
         )}
       </motion.section>
     </motion.div>
+    </>
   );
 };
 
