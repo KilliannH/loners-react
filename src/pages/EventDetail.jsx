@@ -11,7 +11,7 @@ import EventJsonLd from "../components/EventJsonLd";
 import { useTranslation } from "react-i18next";
 
 const EventDetail = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { user } = useAuthStore();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -86,13 +86,13 @@ const EventDetail = () => {
   const [lng, lat] = event.location?.coordinates?.coordinates || [];
   return (
     <>
-    <CustomHelmet
-                          titleKey="eventDetail.seo.title"
-                          descriptionKey="eventDetail.seo.description"
-                        />
+      <CustomHelmet
+        titleKey="eventDetail.seo.title"
+        descriptionKey="eventDetail.seo.description"
+      />
       <EventJsonLd event={event} />
       <motion.div
-        className="max-w-md mx-auto p-4 space-y-4"
+        className="max-w-md mx-auto p-4 space-y-4 pb-14"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
@@ -113,7 +113,7 @@ const EventDetail = () => {
             <div className="flex gap-2">
               <motion.button
                 onClick={() => navigate(`/events/${event._id}/edit`)}
-                className="text-gray-600 hover:text-black transition"
+                className="text-indigo-600 hover:text-indigo-800 transition"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.15 }}
@@ -149,7 +149,17 @@ const EventDetail = () => {
         </motion.p>
 
         <motion.p className="text-sm text-gray-400" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
-          {t("eventDetail.date")} : {new Date(event.date).toLocaleString()}
+          {t("eventDetail.date")} : {new Date(event.date).toLocaleDateString(i18n.language, {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}{" "}
+          {t("eventDetail.at")}{" "}
+          {new Date(event.date).toLocaleTimeString(i18n.language, {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
         </motion.p>
 
         {event.location && (
@@ -170,7 +180,7 @@ const EventDetail = () => {
           </motion.div>
         )}
 
-        <motion.p className="text-sm text-gray-400" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}>
+        <motion.p className="text-sm text-gray-600" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}>
           {event.attendees?.length || 0} {t("eventDetail.attendees")}
         </motion.p>
 

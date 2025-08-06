@@ -73,6 +73,7 @@
         "edit": "Edit event",
         "delete": "Delete event",
         "confirmDelete": "Delete this event? This action is irreversible.",
+        "at": "at",
         "toast": {
             "left": "You have left the event.",
             "joined": "You have joined the event.",
@@ -100,7 +101,7 @@
         "noEvents": "No events found nearby.",
         "attendees": "attendee(s)",
         "createEvent": "Create an event",
-        "totalFound": "{{count}} event(s) found nearby",
+        "totalFound": "{{count}} event(s) found",
         "toast": {
             "geolocError": "Couldn't get your position 📍",
             "geolocRefreshError": "Unable to get location",
@@ -246,6 +247,10 @@
             "title": "Meet, chat, and join events.",
             "subtitle": "Loners connects you with nearby events and the people attending them.",
             "cta": "Join Loners"
+        },
+        "subhero": {
+            "title": "Join events that match your vibe",
+            "subtitle": "On Loners, discover events around your interests and chat with participants even before meeting them."
         },
         "features": {
             "title": "Why choose Loners?",

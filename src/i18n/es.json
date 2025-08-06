@@ -73,6 +73,7 @@
     "edit": "Editar evento",
     "delete": "Eliminar evento",
     "confirmDelete": "¿Eliminar este evento? Esta acción es irreversible.",
+    "at": "a las",
     "toast": {
       "left": "Has salido del evento.",
       "joined": "Te has unido al evento.",
@@ -100,7 +101,7 @@
     "noEvents": "No se encontraron eventos cercanos.",
     "attendees": "asistente(s)",
     "createEvent": "Crear un evento",
-    "totalFound": "{{count}} eventos encontrados cerca",
+    "totalFound": "{{count}} eventos encontrados",
     "toast": {
       "geolocError": "No se pudo obtener tu ubicación 📍",
       "geolocRefreshError": "No se puede obtener la ubicación",
@@ -247,6 +248,10 @@
       "subtitle": "Loners te conecta con eventos cercanos y las personas que asisten.",
       "cta": "Únete a Loners"
     },
+    "subhero": {
+      "title": "Únete a eventos que van contigo",
+      "subtitle": "En Loners, descubre eventos relacionados con tus pasiones y chatea con los participantes incluso antes de conocerlos."
+    },
     "features": {
       "title": "¿Por qué elegir Loners?",
       "nearby": {
@@ -271,8 +276,8 @@
       "button": "Crea una cuenta gratis"
     },
     "seo": {
-            "title": "Loners – Eventos locales y chat anticipado",
-            "description": "Encuentra eventos locales y conecta con los participantes en Loners, la plataforma social para reunirse en torno a pasiones compartidas."
-        }
+      "title": "Loners – Eventos locales y chat anticipado",
+      "description": "Encuentra eventos locales y conecta con los participantes en Loners, la plataforma social para reunirse en torno a pasiones compartidas."
+    }
   }
 }

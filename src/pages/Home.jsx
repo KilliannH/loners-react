@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { MapPin, Users } from "lucide-react";
 import MapWithMarkers from "../components/MapWithMarkers";
 import { useTranslation } from "react-i18next";
+import EventCard from "../components/EventCard";
 import CustomHelmet from "../components/CustomHelmet";
 import Carousel from "react-multi-carousel";
 
@@ -234,20 +235,7 @@ const Home = () => {
             {groupEvents(events, 3).map((group, i) => (
               <div key={i} className="flex flex-col gap-4 h-full">
                 {group.map((event) => (
-                  <div
-                    key={event._id}
-                    onClick={() => navigate(`/events/${event._id}`)}
-                    className="bg-white rounded-xl shadow p-4 border hover:shadow-md transition cursor-pointer min-h-[140px]"
-                  >
-                    <h3 className="text-lg font-bold">{event.name}</h3>
-                    <p className="text-sm text-gray-600">{event.description.length > 150
-                      ? event.description.slice(0, 150) + "..."
-                      : event.description}</p>
-                    <p className="text-xs text-gray-400 mt-1 flex items-center gap-1">
-                      <Users size={12} />
-                      {event.attendees?.length || 0} {t("home.attendees")}
-                    </p>
-                  </div>
+                  <EventCard key={event._id} event={event} />
                 ))}
               </div>
             ))}
@@ -262,12 +250,12 @@ const Home = () => {
 
       {/* ➕ Create Event Button */}
       <button
-  onClick={() => navigate("/create")}
-  className="fixed bottom-20 right-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full w-16 h-16 text-3xl shadow-[0_4px_20px_rgba(99,102,241,0.4)] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out"
-  aria-label={t("home.createEvent")}
->
-  +
-</button>
+        onClick={() => navigate("/create")}
+        className="fixed bottom-20 right-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full w-16 h-16 text-3xl shadow-[0_4px_20px_rgba(99,102,241,0.4)] flex items-center justify-center hover:scale-105 active:scale-95 transition-transform duration-200 ease-in-out"
+        aria-label={t("home.createEvent")}
+      >
+        +
+      </button>
 
     </>
   );

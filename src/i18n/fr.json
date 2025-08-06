@@ -73,6 +73,7 @@
         "edit": "Modifier l'événement",
         "delete": "Supprimer l'événement",
         "confirmDelete": "Supprimer cet événement ? Cette action est irréversible.",
+        "at": "à",
         "toast": {
             "left": "Vous avez quitté l'événement.",
             "joined": "Vous avez rejoint l'événement.",
@@ -100,7 +101,7 @@
         "noEvents": "Aucun événement trouvé à proximité.",
         "attendees": "participant(s)",
         "createEvent": "Créer un événement",
-        "totalFound": "{{count}} événement(s) trouvé(s) autour",
+        "totalFound": "{{count}} événement(s) trouvé(s)",
         "toast": {
             "geolocError": "Impossible d'obtenir la position 📍",
             "geolocRefreshError": "Géoloc impossible",
@@ -247,6 +248,10 @@
             "subtitle": "Loners vous connecte aux événements proches de chez vous et aux gens qui y participent.",
             "cta": "Rejoindre Loners"
         },
+        "subhero": {
+            "title": "Rejoignez des événements qui vous ressemblent",
+            "subtitle": "Sur Loners, découvrez des événements autour de vos passions et échangez avec les participants avant même de vous y rendre."
+        },
         "features": {
             "title": "Pourquoi Loners ?",
             "nearby": {
@@ -271,8 +276,8 @@
             "button": "Créer un compte gratuitement"
         },
         "seo": {
-            "title": "Rencontrez, discutez, participez.",
-            "description": ""
+            "title": "Loners – Événements près de chez vous & chat en avant-première",
+            "description": "Trouvez des événements locaux et échangez avec les participants sur Loners, la plateforme sociale dédiée aux rencontres autour de passions communes."
         }
     }
 }
