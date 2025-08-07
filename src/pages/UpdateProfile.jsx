@@ -28,7 +28,6 @@ const UpdateProfile = () => {
     setLoading(true);
     try {
       const res = await api.put("/users/me", form);
-      console.log(res.data);
       setUser(
         res.data,
         localStorage.getItem("token"),
