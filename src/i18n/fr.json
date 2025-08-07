@@ -316,7 +316,10 @@
         "successMessage": "Ton adresse email a bien été vérifiée. Redirection...",
         "error": "Erreur de vérification",
         "errorMessage": "Le lien est invalide ou expiré.",
-        "resendLink": "Renvoyer un lien"
+        "seo": {
+            "title": "Vérifie ton adresse email – Loners",
+            "description": "Confirme ton adresse email pour activer ton compte Loners et accéder à toutes les fonctionnalités."
+        }
     },
     "resend": {
         "title": "Renvoyer l'email de vérification",

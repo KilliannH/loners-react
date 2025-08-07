@@ -38,7 +38,6 @@ const AppRoutes = () => {
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/cookies" element={<CookiePolicy />} />
     <Route path="/verify-email/:token" element={<VerifyEmail />} />
-    <Route path="/resend-verification" element={<ResendVerification />} />
     <Route path="/home" element={
       <PrivateRoute>
         <Home />

@@ -311,7 +311,10 @@
     "successMessage": "Tu correo electrónico ha sido verificado correctamente. Redirigiendo...",
     "error": "Error de verificación",
     "errorMessage": "El enlace es inválido o ha expirado.",
-    "resendLink": "Reenviar enlace"
+    "seo": {
+      "title": "Verifica tu correo electrónico – Loners",
+      "description": "Confirma tu dirección de correo para activar tu cuenta de Loners y acceder a todas las funciones."
+    }
   },
   "resend": {
     "title": "Reenviar correo de verificación",

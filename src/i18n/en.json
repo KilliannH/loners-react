@@ -311,7 +311,10 @@
         "successMessage": "Your email has been successfully verified. Redirecting...",
         "error": "Verification error",
         "errorMessage": "The link is invalid or has expired.",
-        "resendLink": "Resend a link"
+        "seo": {
+            "title": "Verify your email – Loners",
+            "description": "Confirm your email address to activate your Loners account and access all features."
+        }
     },
     "resend": {
         "title": "Resend verification email",
