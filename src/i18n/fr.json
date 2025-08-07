@@ -248,6 +248,7 @@
     },
     "auth": {
         "logout": "Déconnexion",
+        "login": "Connexion",
         "logoutSuccess": "Déconnexion réussie",
         "language": "Langue"
     },

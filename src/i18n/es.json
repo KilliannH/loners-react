@@ -248,6 +248,7 @@
   },
   "auth": {
     "logout": "Cerrar sesión",
+    "login": "Iniciar sesión",
     "logoutSuccess": "Sesión cerrada con éxito",
     "language": "Idioma"
   },

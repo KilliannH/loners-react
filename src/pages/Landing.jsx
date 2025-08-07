@@ -33,26 +33,34 @@ export default function Landing() {
           </Button>
         </motion.section>
 
-        <section className="w-full py-16 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
-            {/* Text content */}
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl font-bold mb-4">{t("landing.subhero.title")}</h2>
-              <p className="text-gray-600 mb-6">
-                {t("landing.subhero.subtitle")}
-              </p>
-            </div>
+        {/* Subhero section — full-width bg + animation */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-full"
+        >
+          <div className="w-full bg-gray-50 py-16">
+            <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+              {/* Text content */}
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl font-bold mb-4">{t("landing.subhero.title")}</h2>
+                <p className="text-gray-600 mb-6">
+                  {t("landing.subhero.subtitle")}
+                </p>
+              </div>
 
-            {/* Image preview */}
-            <div className="flex-1">
-              <img
-                src="/preview2.png"
-                alt="Aperçu Loners"
-                className="rounded-xl shadow-lg w-full max-w-md mx-auto"
-              />
+              {/* Image preview */}
+              <div className="flex-1">
+                <img
+                  src="/preview2.png"
+                  alt="Aperçu Loners"
+                  className="rounded-xl shadow-lg w-full max-w-md mx-auto"
+                />
+              </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Features Section */}
         <section className="grid gap-10 max-w-4xl md:grid-cols-3">

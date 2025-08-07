@@ -248,6 +248,7 @@
     },
     "auth": {
         "logout": "Logout",
+        "login": "Login",
         "logoutSuccess": "Successfully logged out",
         "language": "Language"
     },

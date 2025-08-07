@@ -5,7 +5,16 @@ import toast from "react-hot-toast";
 import logo from "../assets/logo_inverted.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Globe, LogOut, Menu, X } from "lucide-react";
+import {
+    LogOut,
+    Menu,
+    X,
+    Home,
+    User,
+    MessageSquare,
+    ChevronDown,
+    ChevronUp,
+} from "lucide-react";
 
 const Header = () => {
     const isAuthenticated = useAuthStore((state) => !!state.token);
@@ -13,8 +22,9 @@ const Header = () => {
     const navigate = useNavigate();
     const { i18n, t } = useTranslation();
 
-    const [langOpen, setLangOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [langOpen, setLangOpen] = useState(false);
+    const [legalOpen, setLegalOpen] = useState(false);
 
     const handleLogout = () => {
         logout();
@@ -36,67 +46,19 @@ const Header = () => {
                 transition={{ duration: 0.4 }}
             >
                 <div className="flex justify-between items-center">
-                    {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
                         <img src={logo} alt="Loners logo" className="h-10 w-auto" />
                         <span className="text-lg font-bold tracking-wide">Loners</span>
                     </Link>
-
-                    {/* Desktop Actions */}
-                    <div className="hidden md:flex items-center gap-3">
-                        <button
-                            onClick={() => setLangOpen((prev) => !prev)}
-                            className="hover:text-gray-300 transition"
-                            aria-label="Changer de langue"
-                        >
-                            <Globe size={20} />
-                        </button>
-
-                        <AnimatePresence>
-                            {langOpen && (
-                                <motion.ul
-                                    className="absolute right-4 top-16 bg-white text-black rounded shadow-lg text-sm z-50 overflow-hidden"
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleLanguageSelect("fr")}>🇫🇷 French</li>
-                                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleLanguageSelect("en")}>🇬🇧 English</li>
-                                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleLanguageSelect("es")}>🇪🇸 Spanish</li>
-                                </motion.ul>
-                            )}
-                        </AnimatePresence>
-
-                        {isAuthenticated && (
-                            <motion.button
-                                onClick={handleLogout}
-                                className="p-2 rounded hover:bg-white/10 transition"
-                                aria-label={t("auth.logout")}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <LogOut size={20} />
-                            </motion.button>
-                        )}
-                    </div>
-
-                    {/* Burger menu icon (mobile only) */}
-                    <button
-                        className="md:hidden"
-                        onClick={() => setMenuOpen(true)}
-                        aria-label="Open menu"
-                    >
+                    <button onClick={() => setMenuOpen(true)} aria-label="Open menu">
                         <Menu size={24} />
                     </button>
                 </div>
             </motion.header>
 
-            {/* 📱 Mobile Menu Slide + Overlay */}
             <AnimatePresence>
                 {menuOpen && (
                     <>
-                        {/* 🔲 Overlay */}
                         <motion.div
                             className="fixed inset-0 bg-black/50 z-40"
                             initial={{ opacity: 0 }}
@@ -104,8 +66,6 @@ const Header = () => {
                             exit={{ opacity: 0 }}
                             onClick={() => setMenuOpen(false)}
                         />
-
-                        {/* 📱 Slide-in Menu */}
                         <motion.div
                             className="fixed top-0 right-0 w-64 h-full bg-white text-black shadow-lg z-50 flex flex-col p-6 gap-6"
                             initial={{ x: "100%" }}
@@ -121,40 +81,116 @@ const Header = () => {
                             </div>
 
                             <div className="space-y-4">
-                                {/* Langue */}
-                                <div>
-                                    <p className="text-sm text-gray-600">{t("auth.language")}</p>
-                                    <div className="flex gap-2 mt-2">
-                                        <button onClick={() => handleLanguageSelect("fr")}>🇫🇷</button>
-                                        <button onClick={() => handleLanguageSelect("en")}>🇬🇧</button>
-                                        <button onClick={() => handleLanguageSelect("es")}>🇪🇸</button>
-                                    </div>
+
+                                {/* 🔗 Navigation principale */}
+                                <div className="flex flex-col gap-3 text-sm">
+                                    <Link
+                                        to="/home"
+                                        className="flex items-center gap-2 text-gray-800 hover:text-blue-600 transition"
+                                        onClick={() => setMenuOpen(false)}
+                                    >
+                                        <Home size={18} /> {t("nav.home") || "Accueil"}
+                                    </Link>
+                                    <Link
+                                        to="/profile"
+                                        className="flex items-center gap-2 text-gray-800 hover:text-blue-600 transition"
+                                        onClick={() => setMenuOpen(false)}
+                                    >
+                                        <User size={18} /> {t("nav.profile") || "Profil"}
+                                    </Link>
+                                    <Link
+                                        to="/chat"
+                                        className="flex items-center gap-2 text-gray-800 hover:text-blue-600 transition"
+                                        onClick={() => setMenuOpen(false)}
+                                    >
+                                        <MessageSquare size={18} /> {t("nav.chat") || "Chat"}
+                                    </Link>
                                 </div>
 
-                                {/* 📄 Legal links */}
-                                <div>
-                                    <p className="text-sm text-gray-600">{t("nav.legal")}</p>
-                                    <div className="flex flex-col gap-1 mt-2 text-sm">
-                                        <Link to="/legal-terms" className="text-blue-600 hover:underline" onClick={() => setMenuOpen(false)}>
-                                            {t("legal.terms")}
-                                        </Link>
-                                        <Link to="/privacy-policy" className="text-blue-600 hover:underline" onClick={() => setMenuOpen(false)}>
-                                            {t("legal.privacy")}
-                                        </Link>
-                                        <Link to="/cookies" className="text-blue-600 hover:underline" onClick={() => setMenuOpen(false)}>
-                                            {t("legal.cookies")}
-                                        </Link>
-                                    </div>
+                                {/* 🌐 Langues — collapsible */}
+                                <div className="text-sm text-gray-800">
+                                    <button
+                                        onClick={() => setLangOpen(!langOpen)}
+                                        className="flex justify-between items-center w-full"
+                                    >
+                                        <span>{t("auth.language")}</span>
+                                        {langOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                                    </button>
+                                    <AnimatePresence>
+                                        {langOpen && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                className="mt-2 flex gap-2 overflow-hidden"
+                                            >
+                                                <button onClick={() => handleLanguageSelect("fr")}>🇫🇷</button>
+                                                <button onClick={() => handleLanguageSelect("en")}>🇬🇧</button>
+                                                <button onClick={() => handleLanguageSelect("es")}>🇪🇸</button>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
 
-                                {/* Logout */}
-                                {isAuthenticated && (
+                                {/* 📄 Mentions légales — collapsible */}
+                                <div className="text-sm text-gray-800">
+                                    <button
+                                        onClick={() => setLegalOpen(!legalOpen)}
+                                        className="flex justify-between items-center w-full"
+                                    >
+                                        <span>{t("nav.legal")}</span>
+                                        {legalOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                                    </button>
+                                    <AnimatePresence>
+                                        {legalOpen && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                className="mt-2 flex flex-col gap-1 overflow-hidden"
+                                            >
+                                                <Link
+                                                    to="/legal-terms"
+                                                    className="hover:underline"
+                                                    onClick={() => setMenuOpen(false)}
+                                                >
+                                                    {t("legal.terms")}
+                                                </Link>
+                                                <Link
+                                                    to="/privacy-policy"
+                                                    className="hover:underline"
+                                                    onClick={() => setMenuOpen(false)}
+                                                >
+                                                    {t("legal.privacy")}
+                                                </Link>
+                                                <Link
+                                                    to="/cookies"
+                                                    className="hover:underline"
+                                                    onClick={() => setMenuOpen(false)}
+                                                >
+                                                    {t("legal.cookies")}
+                                                </Link>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+
+                                {/* 🚪 Déconnexion */}
+                                {isAuthenticated ? (
                                     <button
                                         onClick={handleLogout}
                                         className="flex items-center gap-2 text-sm text-red-600 hover:text-red-800 transition"
                                     >
                                         <LogOut size={18} /> {t("auth.logout")}
                                     </button>
+                                ) : (
+                                    <Link
+                                        to="/login"
+                                        onClick={() => setMenuOpen(false)}
+                                        className="flex items-center gap-2 text-sm text-gray-800 hover:text-blue-600 transition"
+                                    >
+                                        <LogOut size={18} /> {t("auth.login") || "Se connecter"}
+                                    </Link>
                                 )}
                             </div>
                         </motion.div>

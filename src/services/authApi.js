@@ -11,3 +11,8 @@ export const registerUser = async (credentials) => {
   const response = await axios.post(`${API_URL}/auth/signup`, credentials);
   return response.data;
 };
+
+export const registerGoogle = async (credentials) => {
+  const response = await axios.post(`${API_URL}/auth/google`, credentials);
+  return response.data;
+};
