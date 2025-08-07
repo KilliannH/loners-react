@@ -21,13 +21,6 @@ const GooglePlacesInput = ({ onSelect }) => {
       const lat = place.geometry?.location?.lat();
       const lng = place.geometry?.location?.lng();
 
-      console.log("📍 Lieu sélectionné :", {
-        name: place.name,
-        address: place.formatted_address,
-        lat,
-        lng,
-      });
-
       onSelect({
         name: place.name,
         address: place.formatted_address,
