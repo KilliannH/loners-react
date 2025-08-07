@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { MapPin, X } from "lucide-react";
 import GooglePlacesInput from "../components/GooglePlaceInput";
 import { motion } from "framer-motion";
 import CustomHelmet from "../components/CustomHelmet";
@@ -208,24 +209,28 @@ const CreateEvent = () => {
 
           {form.locationId && (
             <motion.div
-              className="flex items-center gap-2 text-sm text-green-700 bg-green-50 border border-green-200 rounded px-3 py-2 mt-2"
+              className="flex items-center gap-2 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded px-3 py-2 mt-2"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
             >
-              <span>📍</span>
+              <MapPin size={16} className="text-gray-500" />
               <span>
-                {t("createEvent.fields.selectLocation")} <strong>{searchQuery}</strong>
+                {t("createEvent.fields.selectLocation")}{" "}
+                <strong>{searchQuery}</strong>
               </span>
               <button
                 type="button"
                 onClick={() => {
                   setForm((prev) => ({ ...prev, locationId: "" }));
                   setSearchQuery("");
-                  toast(t("createEvent.toast.locationReset"), { icon: "❌" });
+                  toast(t("createEvent.toast.locationReset"), {
+                    icon: <X size={16} />,
+                  });
                 }}
-                className="ml-auto text-red-600 hover:underline text-xs"
+                className="ml-auto text-gray-500 hover:text-red-600 transition text-xs"
+                aria-label={t("createEvent.fields.cancelSelection")}
               >
-                {t("createEvent.fields.cancelSelection")}
+                <X size={16} />
               </button>
             </motion.div>
           )}
@@ -233,7 +238,7 @@ const CreateEvent = () => {
           <motion.button
             type="submit"
             disabled={loading}
-            className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 rounded-lg shadow-[0_4px_20px_rgba(99,102,241,0.4)] hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out disabled:opacity-50"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
