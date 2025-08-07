@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
@@ -11,21 +11,30 @@ const VerifyEmail = () => {
   const navigate = useNavigate();
   const [status, setStatus] = useState("loading"); // loading | success | error
 
-  useEffect(() => {
-    const verify = async () => {
-      try {
-        await verifyEmail(token);
+  const hasVerifiedRef = useRef(false);
+
+useEffect(() => {
+  const verify = async () => {
+    try {
+      const res = await verifyEmail(token);
+      if (res.success) {
         setStatus("success");
         toast.success(t("verify.success"));
-        setTimeout(() => navigate("/login"), 3000);
-      } catch (err) {
+        hasVerifiedRef.current = true;
+        setTimeout(() => navigate("/home", { replace: true }), 2000); // redirection = reset
+      }
+    } catch (err) {
+      if (!hasVerifiedRef.current) {
         setStatus("error");
         toast.error(t("verify.error"));
       }
-    };
+    }
+  };
 
-    if (token) verify();
-  }, [token]);
+  if (token && !hasVerifiedRef.current) {
+    verify();
+  }
+}, [token, t, navigate]);
 
   return (
     <motion.div
