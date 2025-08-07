@@ -29,6 +29,7 @@ const Header = () => {
     const handleLogout = () => {
         logout();
         toast.success(t("auth.logoutSuccess"));
+        setMenuOpen(false);
         navigate("/login");
     };
 
@@ -189,7 +190,7 @@ const Header = () => {
                                         onClick={() => setMenuOpen(false)}
                                         className="flex items-center gap-2 text-sm text-gray-800 hover:text-blue-600 transition"
                                     >
-                                        <LogOut size={18} /> {t("auth.login") || "Se connecter"}
+                                        <LogOut size={18} /> {t("auth.login")}
                                     </Link>
                                 )}
                             </div>
