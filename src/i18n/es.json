@@ -151,7 +151,7 @@
   "userProfile": {
     "title": "Perfil",
     "upcommingEvents": "Próximos eventos",
-  "pastEvents": "Eventos recientes (pasados)",
+    "pastEvents": "Eventos recientes (pasados)",
     "meta": {
       "descriptionFirstPart": "Perfil del usuario",
       "descriptionSecondPart": "en"
@@ -257,9 +257,9 @@
     "cancel": "Cancelar",
     "pastEvent": "Evento expirado"
   },
-  "legal.content": "**Editor del sitio**  \nLoners, publicado por Killiann Hervagault  \nDirección: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nCorreo electrónico: support@loners.com  \nDirector de la publicación: Killiann Hervagault\n\n**Alojamiento**  \nEste sitio está alojado por Google Cloud Platform (GCP)  \nDirección: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelanda  \n\n**Propiedad intelectual**  \nTodo el contenido de este sitio (textos, imágenes, logotipos, etc.) es propiedad exclusiva de Loners, salvo que se indique lo contrario.\n\n**Descargo de responsabilidad**  \nLoners no se responsabiliza de ningún daño directo o indirecto causado al dispositivo del usuario al acceder al sitio.",
+  "legal.content": "**Editor del sitio**  \nLoners, publicado por Killiann Hervagault  \nDirección: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nCorreo electrónico: support@loners.net  \nDirector de la publicación: Killiann Hervagault\n\n**Alojamiento**  \nEste sitio está alojado por Google Cloud Platform (GCP)  \nDirección: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelanda  \n\n**Propiedad intelectual**  \nTodo el contenido de este sitio (textos, imágenes, logotipos, etc.) es propiedad exclusiva de Loners, salvo que se indique lo contrario.\n\n**Descargo de responsabilidad**  \nLoners no se responsabiliza de ningún daño directo o indirecto causado al dispositivo del usuario al acceder al sitio.",
   "terms.content": "### 1. Finalidad\nEstos términos rigen el uso de la plataforma Loners por parte de sus usuarios.\n\n### 2. Acceso al servicio\nEl servicio es gratuito con funciones limitadas. Una suscripción desbloquea todas las funciones.\n\n### 3. Cuenta de usuario\nEl usuario es responsable de la información proporcionada y de la confidencialidad de su cuenta.\n\n### 4. Datos personales\nLos datos se procesan de acuerdo con nuestra política de privacidad. No se comparten datos con terceros sin consentimiento.\n\n### 5. Cancelación\nLos usuarios pueden cancelar su suscripción en cualquier momento desde la página de su cuenta.\n\n### 6. Modificaciones\nLoners se reserva el derecho de actualizar estos términos en cualquier momento.",
-  "privacy.content": "**Última actualización: 30 de julio de 2025**\n\n## 1. Datos recopilados\nRecopilamos la información que proporciona al registrarse (nombre, apellido, correo electrónico) y los datos relacionados con su uso del servicio (eventos, preferencias, pagos).\n\n## 2. Uso de los datos\nSus datos se utilizan únicamente para:\n- Proporcionar el servicio Loners\n- Mejorar la experiencia del usuario\n- Gestionar pagos y accesos\n\n## 3. Almacenamiento y seguridad\nSus datos se almacenan de forma segura y nunca se venden. Utilizamos herramientas de seguridad estándar de la industria.\n\n## 4. Sus derechos\nDe acuerdo con el RGPD, puede solicitar acceso, modificación o eliminación de sus datos en cualquier momento contactándonos en **support@loners.com**.\n\n## 5. Cookies\nLoners utiliza cookies para:\n- Mejorar la navegación\n- Medir el tráfico del sitio\nPuede desactivar las cookies a través de la configuración de su navegador.\n\n## 6. Contacto\nSi tiene alguna pregunta sobre esta política, póngase en contacto con:\n**support@loners.com**",
+  "privacy.content": "**Última actualización: 30 de julio de 2025**\n\n## 1. Datos recopilados\nRecopilamos la información que proporciona al registrarse (nombre, apellido, correo electrónico) y los datos relacionados con su uso del servicio (eventos, preferencias, pagos).\n\n## 2. Uso de los datos\nSus datos se utilizan únicamente para:\n- Proporcionar el servicio Loners\n- Mejorar la experiencia del usuario\n- Gestionar pagos y accesos\n\n## 3. Almacenamiento y seguridad\nSus datos se almacenan de forma segura y nunca se venden. Utilizamos herramientas de seguridad estándar de la industria.\n\n## 4. Sus derechos\nDe acuerdo con el RGPD, puede solicitar acceso, modificación o eliminación de sus datos en cualquier momento contactándonos en **support@loners.net**.\n\n## 5. Cookies\nLoners utiliza cookies para:\n- Mejorar la navegación\n- Medir el tráfico del sitio\nPuede desactivar las cookies a través de la configuración de su navegador.\n\n## 6. Contacto\nSi tiene alguna pregunta sobre esta política, póngase en contacto con:\n**support@loners.net**",
   "landing": {
     "hero": {
       "title": "Conoce, chatea y participa.",
@@ -297,5 +297,11 @@
       "title": "Loners – Eventos locales y chat anticipado",
       "description": "Encuentra eventos locales y conecta con los participantes en Loners, la plataforma social para reunirse en torno a pasiones compartidas."
     }
+  },
+  "cookies": {
+    "message": "Utilizamos cookies para mejorar tu experiencia.",
+    "link": "Saber más",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
   }
 }

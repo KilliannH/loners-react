@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import BottomNav from "../components/BottomNav";
+import CookieConsent from "../components/CookieConsent";
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
@@ -13,6 +14,7 @@ const MainLayout = ({ children }) => {
       <main className={`flex-grow px-4 py-2 ${isAuthRoute ? "bg-gray-100" : ""}`}>
         {children}
       </main>
+      <CookieConsent />
       <BottomNav />
     </div>
   );
