@@ -200,6 +200,7 @@
             "email": "ton.email@email.com",
             "password": "********"
         },
+        "or": "ou",
         "submit": "Se connecter",
         "noAccount": "Pas encore inscrit ?",
         "register": "Créer un compte",
@@ -304,9 +305,26 @@
         }
     },
     "cookies": {
-            "message": "Nous utilisons des cookies pour améliorer votre expérience.",
-            "link": "En savoir plus",
-            "accept": "Accepter",
-            "reject": "Refuser"
-        }
+        "message": "Nous utilisons des cookies pour améliorer votre expérience.",
+        "link": "En savoir plus",
+        "accept": "Accepter",
+        "reject": "Refuser"
+    },
+    "verify": {
+        "loading": "Vérification en cours...",
+        "success": "Adresse vérifiée !",
+        "successMessage": "Ton adresse email a bien été vérifiée. Redirection...",
+        "error": "Erreur de vérification",
+        "errorMessage": "Le lien est invalide ou expiré.",
+        "resendLink": "Renvoyer un lien"
+    },
+    "resend": {
+        "title": "Renvoyer l'email de vérification",
+        "placeholder": "Adresse email",
+        "button": "Renvoyer",
+        "sending": "Envoi en cours...",
+        "sent": "Email envoyé.",
+        "error": "Impossible d'envoyer l'email.",
+        "emailRequired": "Adresse requise"
+    }
 }

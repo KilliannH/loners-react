@@ -19,6 +19,8 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import CookiePolicy from "../pages/CookiePolicy";
 import Landing from "../pages/Landing";
 import UserProfile from "../pages/UserProfile";
+import VerifyEmail from "../pages/VerifyEmail";
+import ResendVerification from "../pages/ResendVerification";
 
 const AppRoutes = () => {
   useIdentifySocket();
@@ -35,6 +37,8 @@ const AppRoutes = () => {
     <Route path="/legal-terms" element={<LegalTerms />} />
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/cookies" element={<CookiePolicy />} />
+    <Route path="/verify-email/:token" element={<VerifyEmail />} />
+    <Route path="/resend-verification" element={<ResendVerification />} />
     <Route path="/home" element={
       <PrivateRoute>
         <Home />

@@ -16,3 +16,13 @@ export const registerGoogle = async (credentials) => {
   const response = await axios.post(`${API_URL}/auth/google`, credentials);
   return response.data;
 };
+
+export const verifyEmail = async (token) => {
+  const response = await axios.get(`${API_URL}/auth/verify-email/${token}`);
+  return response.data;
+}
+
+export const resendVerification = async (email) => {
+  const response = await axios.post(`${API_URL}/auth/resend-verification`, { email });
+  return response.data;
+}

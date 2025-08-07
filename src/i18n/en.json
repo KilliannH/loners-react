@@ -200,6 +200,7 @@
             "email": "your.email@email.com",
             "password": "********"
         },
+        "or": "or",
         "submit": "Log in",
         "noAccount": "Don't have an account?",
         "register": "Create an account",
@@ -303,5 +304,22 @@
         "link": "Learn more",
         "accept": "Accept",
         "reject": "Decline"
+    },
+    "verify": {
+        "loading": "Verifying...",
+        "success": "Email verified!",
+        "successMessage": "Your email has been successfully verified. Redirecting...",
+        "error": "Verification error",
+        "errorMessage": "The link is invalid or has expired.",
+        "resendLink": "Resend a link"
+    },
+    "resend": {
+        "title": "Resend verification email",
+        "placeholder": "Email address",
+        "button": "Resend",
+        "sending": "Sending...",
+        "sent": "Email sent.",
+        "error": "Failed to send the email.",
+        "emailRequired": "Email is required"
     }
 }

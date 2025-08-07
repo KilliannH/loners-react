@@ -200,6 +200,7 @@
       "email": "tu.email@email.com",
       "password": "********"
     },
+    "or": "o",
     "submit": "Iniciar sesión",
     "noAccount": "¿No tienes una cuenta?",
     "register": "Crear una cuenta",
@@ -303,5 +304,22 @@
     "link": "Saber más",
     "accept": "Aceptar",
     "reject": "Rechazar"
+  },
+  "verify": {
+    "loading": "Verificando...",
+    "success": "¡Correo verificado!",
+    "successMessage": "Tu correo electrónico ha sido verificado correctamente. Redirigiendo...",
+    "error": "Error de verificación",
+    "errorMessage": "El enlace es inválido o ha expirado.",
+    "resendLink": "Reenviar enlace"
+  },
+  "resend": {
+    "title": "Reenviar correo de verificación",
+    "placeholder": "Dirección de correo",
+    "button": "Reenviar",
+    "sending": "Enviando...",
+    "sent": "Correo enviado.",
+    "error": "No se pudo enviar el correo.",
+    "emailRequired": "Correo requerido"
   }
 }
