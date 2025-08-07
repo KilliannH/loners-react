@@ -147,6 +147,19 @@
       "description": "Actualiza tu nombre de usuario o avatar para personalizar tu perfil de Loners."
     }
   },
+  "userProfile": {
+    "title": "Perfil",
+    "upcommingEvents": "Próximos eventos",
+  "pastEvents": "Eventos recientes (pasados)",
+    "meta": {
+      "descriptionFirstPart": "Perfil del usuario",
+      "descriptionSecondPart": "en"
+    },
+    "loading": "Cargando...",
+    "toast": {
+      "fetchUserError": "No se pudo cargar el usuario."
+    }
+  },
   "map": {
     "loading": "Cargando mapa...",
     "invalid_coordinates": "Coordenadas no válidas"
@@ -238,7 +251,8 @@
     "language": "Idioma"
   },
   "common": {
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "pastEvent": "Evento expirado"
   },
   "legal.content": "**Editor del sitio**  \nLoners, publicado por Killiann Hervagault  \nDirección: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nCorreo electrónico: support@loners.com  \nDirector de la publicación: Killiann Hervagault\n\n**Alojamiento**  \nEste sitio está alojado por Google Cloud Platform (GCP)  \nDirección: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelanda  \n\n**Propiedad intelectual**  \nTodo el contenido de este sitio (textos, imágenes, logotipos, etc.) es propiedad exclusiva de Loners, salvo que se indique lo contrario.\n\n**Descargo de responsabilidad**  \nLoners no se responsabiliza de ningún daño directo o indirecto causado al dispositivo del usuario al acceder al sitio.",
   "terms.content": "### 1. Finalidad\nEstos términos rigen el uso de la plataforma Loners por parte de sus usuarios.\n\n### 2. Acceso al servicio\nEl servicio es gratuito con funciones limitadas. Una suscripción desbloquea todas las funciones.\n\n### 3. Cuenta de usuario\nEl usuario es responsable de la información proporcionada y de la confidencialidad de su cuenta.\n\n### 4. Datos personales\nLos datos se procesan de acuerdo con nuestra política de privacidad. No se comparten datos con terceros sin consentimiento.\n\n### 5. Cancelación\nLos usuarios pueden cancelar su suscripción en cualquier momento desde la página de su cuenta.\n\n### 6. Modificaciones\nLoners se reserva el derecho de actualizar estos términos en cualquier momento.",

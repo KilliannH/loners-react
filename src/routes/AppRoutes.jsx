@@ -18,6 +18,7 @@ import LegalTerms from "../pages/LegalTerms";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import CookiePolicy from "../pages/CookiePolicy";
 import Landing from "../pages/Landing";
+import UserProfile from "../pages/UserProfile";
 
 const AppRoutes = () => {
   useIdentifySocket();
@@ -42,6 +43,11 @@ const AppRoutes = () => {
     <Route path="/create" element={
       <PrivateRoute>
         <CreateEvent />
+      </PrivateRoute>
+    } />
+    <Route path="/users/:id" element={
+      <PrivateRoute>
+        <UserProfile />
       </PrivateRoute>
     } />
     <Route path="/profile" element={

@@ -147,6 +147,19 @@
             "description": "Mettez à jour votre nom d’utilisateur ou votre avatar pour personnaliser votre profil Loners."
         }
     },
+    "userProfile": {
+        "title": "Profil",
+        "upcommingEvents": "Événements à venir",
+        "pastEvents": "Événements récents (passés)",
+        "meta": {
+            "descriptionFirstPart": "Profil utilisateur de",
+            "descriptionSecondPart": "sur"
+        },
+        "loading": "Chargement...",
+        "toast": {
+            "fetchUserError": "Impossible de charger l'utilisateur."
+        }
+    },
     "map": {
         "loading": "Chargement carte...",
         "invalid_coordinates": "Coordonées invalides"
@@ -238,7 +251,8 @@
         "language": "Langue"
     },
     "common": {
-        "cancel": "Annuler"
+        "cancel": "Annuler",
+        "pastEvent": "Événement expiré"
     },
     "legal.content": "**Éditeur du site**  \nLoners, projet édité par Killiann Hervagault  \nAdresse : 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nEmail : support@loners.com  \nDirecteur de la publication : Killiann Hervagault\n\n**Hébergement**  \nCe site est hébergé par Google Cloud Platform (GCP)  \nAdresse : Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelande \n\n**Propriété intellectuelle**  \nTous les contenus présents sur ce site (textes, images, logos, etc.) sont la propriété exclusive de Loners, sauf mention contraire.\n\n**Responsabilité**  \nLoners ne saurait être tenu responsable des dommages directs ou indirects causés à l’équipement de l’utilisateur lors de l'accès au site.",
     "terms.content": "### 1. Objet\nLes présentes conditions régissent l’utilisation du site Loners par les utilisateurs.\n\n### 2. Accès au service\nLe service est accessible gratuitement avec des fonctionnalités limitées. Un abonnement permet de débloquer l'ensemble des fonctionnalités.\n\n### 3. Compte utilisateur\nL'utilisateur est responsable des informations transmises et de la confidentialité de son compte.\n\n### 4. Données personnelles\nLes données sont traitées conformément à notre politique de confidentialité. Aucune donnée ne sera partagée à des tiers sans consentement.\n\n### 5. Résiliation\nL'utilisateur peut résilier son abonnement à tout moment via son espace personnel.\n\n### 6. Modifications\nLoners se réserve le droit de modifier ces conditions à tout moment.",

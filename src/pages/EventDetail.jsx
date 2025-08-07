@@ -212,22 +212,37 @@ const EventDetail = () => {
           </button>
 
           {event?.attendees?.length > 0 && (
-          <div className="mt-3">
-            <h4 className="text-sm text-gray-500 mb-2">
-              {t("eventDetail.attendees")} ({event.attendees.length})
-            </h4>
-            <div className="flex space-x-2">
-              {event.attendees.map((user, i) => (
-                <img
-                  key={i}
-                  src={user.avatarUrl || "/default-avatar.png"}
-                  alt="attendee"
-                  className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                />
-              ))}
+            <div className="mt-3">
+              <h4 className="text-sm text-gray-500 mb-2">
+                {t("eventDetail.attendees")} ({event.attendees.length})
+              </h4>
+              <div className="flex space-x-2">
+                {event.attendees.map((user, i) => (
+                  <Tooltip.Provider key={i} delayDuration={100}>
+                    <Tooltip.Root>
+                      <Tooltip.Trigger asChild>
+                        <img
+                          onClick={() => navigate(`/users/${user._id}`)}
+                          src={user.avatarUrl || "/default-avatar.png"}
+                          alt={user.username}
+                          className="w-8 h-8 rounded-full border-2 border-white object-cover cursor-pointer hover:ring-2 hover:ring-blue-500 transition"
+                        />
+                      </Tooltip.Trigger>
+                      <Tooltip.Portal>
+                        <Tooltip.Content
+                          side="top"
+                          className="bg-black text-white text-xs px-2 py-1 rounded shadow z-50"
+                        >
+                          {user.username}
+                          <Tooltip.Arrow className="fill-black" />
+                        </Tooltip.Content>
+                      </Tooltip.Portal>
+                    </Tooltip.Root>
+                  </Tooltip.Provider>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
         </motion.div>
       </motion.div>
 

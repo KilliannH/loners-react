@@ -147,6 +147,19 @@
             "description": "Update your username or avatar to personalize your Loners profile."
         }
     },
+    "userProfile": {
+        "title": "Profile",
+        "upcommingEvents": "Upcoming Events",
+        "pastEvents": "Recent Past Events",
+        "meta": {
+            "descriptionFirstPart": "User profile of",
+            "descriptionSecondPart": "on"
+        },
+        "loading": "Loading...",
+        "toast": {
+            "fetchUserError": "Failed to load user."
+        }
+    },
     "map": {
         "loading": "Loading map...",
         "invalid_coordinates": "Invalid coordinates"
@@ -238,7 +251,8 @@
         "language": "Language"
     },
     "common": {
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "pastEvent": "Past Event"
     },
     "legal.content": "**Site Editor**  \nLoners, published by Killiann Hervagault  \nAddress: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nEmail: support@loners.com  \nPublication director: Killiann Hervagault\n\n**Hosting**  \nThis site is hosted by Google Cloud Platform (GCP)  \nAddress: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelande  \n\n**Intellectual Property**  \nAll content on this site (texts, images, logos, etc.) is the exclusive property of Loners unless otherwise stated.\n\n**Disclaimer**  \nLoners cannot be held liable for any direct or indirect damage caused to the user's device when accessing the site.",
     "terms.content": "### 1. Purpose\nThese terms govern the use of the Loners platform by its users.\n\n### 2. Access to the service\nThe service is available for free with limited features. A subscription unlocks all features.\n\n### 3. User account\nThe user is responsible for the information provided and the confidentiality of their account.\n\n### 4. Personal data\nData is processed in accordance with our privacy policy. No data is shared with third parties without consent.\n\n### 5. Termination\nUsers may cancel their subscription at any time from their account page.\n\n### 6. Modifications\nLoners reserves the right to update these terms at any time.",
