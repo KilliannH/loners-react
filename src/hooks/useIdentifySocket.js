@@ -7,7 +7,6 @@ const useIdentifySocket = () => {
 
   useEffect(() => {
     if (user?._id) {
-      console.log("🔐 Identification socket :", user._id);
       socket.emit("identify", user._id);
     }
   }, [user?._id]);

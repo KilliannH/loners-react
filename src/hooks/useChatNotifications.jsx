@@ -7,11 +7,9 @@ const useChatNotifications = (currentEventId) => {
   const navigate = useNavigate();
   useEffect(() => {
     const handleNotification = ({ eventId, from, text }) => {
-      console.log("📥 Notification reçue :", { eventId, currentEventId, from, text });
 
       // Évite les erreurs de comparaison avec null/undefined
       if (String(eventId) === String(currentEventId)) {
-        console.log("🛑 Notification ignorée : utilisateur déjà dans la salle");
         return;
       }
 
@@ -36,7 +34,6 @@ const useChatNotifications = (currentEventId) => {
       );
     };
 
-    console.log("🔌 Montage du listener notif (eventId courant :", currentEventId, ")");
     socket.on("message:notification", handleNotification);
 
     return () => {
