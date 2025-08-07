@@ -47,7 +47,8 @@
             "locationExists": "Lieu existant sélectionné",
             "locationCreated": "Lieu “{{name}}” ajouté et sélectionné",
             "locationInvalid": "Impossible de valider ce lieu",
-            "locationReset": "Sélection annulée"
+            "locationReset": "Sélection annulée",
+            "pastDateError": "La date de l'événement ne peut pas être dans le passé."
         },
         "seo": {
             "title": "Créer un événement - Loners",
