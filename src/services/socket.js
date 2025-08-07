@@ -11,4 +11,8 @@ if (userId) {
   socket.emit("identify", userId);
 }
 
+setInterval(() => {
+  socket.emit("ping");
+}, 10000);
+
 export default socket;
