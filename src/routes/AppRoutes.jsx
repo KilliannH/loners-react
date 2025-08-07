@@ -20,7 +20,6 @@ import CookiePolicy from "../pages/CookiePolicy";
 import Landing from "../pages/Landing";
 import UserProfile from "../pages/UserProfile";
 import VerifyEmail from "../pages/VerifyEmail";
-import ResendVerification from "../pages/ResendVerification";
 
 const AppRoutes = () => {
   useIdentifySocket();

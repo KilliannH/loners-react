@@ -110,17 +110,21 @@ const ChatRoom = () => {
               )}
 
               <div
-                className={`max-w-xs px-3 py-2 rounded-lg ${
-                  isCurrentUser
-                    ? "bg-blue-600 text-white self-end"
-                    : "bg-gray-100 text-black self-start"
-                }`}
-              >
-                <p className="text-sm break-words">{msg.text}</p>
-                <p className="text-[10px] mt-1 text-gray-200">
-                  {msg.sender?.username || t("chat.unknown")}
-                </p>
-              </div>
+  className={`max-w-xs px-3 py-2 rounded-lg ${
+    isCurrentUser
+      ? "bg-blue-600 text-white self-end"
+      : "bg-gray-100 text-black self-start"
+  }`}
+>
+  <p className="text-sm break-words">{msg.text}</p>
+  <p
+    className={`text-[10px] mt-1 ${
+      isCurrentUser ? "text-gray-200" : "text-gray-500"
+    }`}
+  >
+    {msg.sender?.username || t("chat.unknown")}
+  </p>
+</div>
 
               {/* Avatar à droite pour l'utilisateur connecté */}
               {isCurrentUser && showAvatar && user.avatarUrl && (

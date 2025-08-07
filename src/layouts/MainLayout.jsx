@@ -6,7 +6,8 @@ import CookieConsent from "../components/CookieConsent";
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
-  const isAuthRoute = location.pathname === "/login" || location.pathname === "/register";
+  const isAuthRoute = location.pathname === "/login" || location.pathname === "/register" ||
+  location.pathname.startsWith("/verify-email/");
 
   return (
     <div className="flex flex-col min-h-screen">
