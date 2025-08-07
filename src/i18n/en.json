@@ -180,6 +180,7 @@
         "submit": "Sign up",
         "already": "Already have an account?",
         "login": "Log in",
+        "or": "or",
         "toast": {
             "success": "Registration successful 🎉",
             "error": "Registration error"

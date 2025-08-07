@@ -180,6 +180,7 @@
     "submit": "Registrarse",
     "already": "¿Ya tienes una cuenta?",
     "login": "Iniciar sesión",
+    "or": "o",
     "toast": {
       "success": "Registro exitoso 🎉",
       "error": "Error de registro"

@@ -1,12 +1,14 @@
 import { useEffect } from "react";
-import jwt_decode from "jwt-decode";
+import { registerGoogle } from "../services/authApi";
 import { useAuthStore } from "../features/auth/authStore";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const GoogleLoginButton = () => {
+    const { t } = useTranslation();
   const navigate = useNavigate();
-  const login = useAuthStore((state) => state.login); // suppose que tu as une méthode login(data)
+  const setUser = useAuthStore((state) => state.setUser); // suppose que tu as une méthode login(data)
 
   useEffect(() => {
     /* global google */
@@ -21,6 +23,7 @@ const GoogleLoginButton = () => {
         {
           theme: "outline",
           size: "large",
+          width: "100%",
         }
       );
     }
@@ -31,26 +34,20 @@ const GoogleLoginButton = () => {
       const { credential } = response;
 
       // Envoie le token Google au backend
-      const res = await fetch("/api/auth/google", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ credential }),
-      });
+      const res = await registerGoogle({ credential });
 
-      if (!res.ok) throw new Error("Erreur Google login");
+      const { user, token, refreshToken } = res;
 
-      const data = await res.json();
-
-      login(data); // stocker ton access + refresh token, user info, etc.
-      toast.success("Connexion réussie !");
+      setUser(user, token, refreshToken); // stocker ton access + refresh token, user info, etc.
+      toast.success(t("googleButton.success"));
       navigate("/home");
     } catch (err) {
       console.error(err);
-      toast.error("Échec de la connexion Google");
+      toast.error(t("googleButton.error"));
     }
   };
 
-  return <div id="google-signin-button"></div>;
+  return <div id="google-signin-button" className="w-full mt-6 flex justify-center" />;
 };
 
 export default GoogleLoginButton;

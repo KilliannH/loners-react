@@ -180,6 +180,7 @@
         "submit": "S'inscrire",
         "already": "Déjà un compte ?",
         "login": "Se connecter",
+        "or": "ou",
         "toast": {
             "success": "Inscription réussie 🎉",
             "error": "Erreur d'inscription"
@@ -251,6 +252,11 @@
         "login": "Connexion",
         "logoutSuccess": "Déconnexion réussie",
         "language": "Langue"
+    },
+    "googleButton": {
+        "googleError": "Erreur Google login",
+        "success": "Connexion réussie !",
+        "error": "Échec de la connexion Google"
     },
     "common": {
         "cancel": "Annuler",
