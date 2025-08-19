@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { X, Download, Users, MessageCircle, Calendar, Sparkles, ArrowRight } from "lucide-react";
+import CustomHelmet from "../components/CustomHelmet";
 import { useTranslation } from "react-i18next";
 
 // Modern Button Component
@@ -172,6 +173,11 @@ export default function Landing() {
   ];
 
   return (
+    <>
+    <CustomHelmet
+              titleKey="landing.seo.title"
+              descriptionKey="landing.seo.description"
+            />
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-purple-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
@@ -410,5 +416,6 @@ export default function Landing() {
       {/* Download Modal */}
       <DownloadModal open={isDownloadOpen} onClose={() => setDownloadOpen(false)} />
     </div>
+    </>
   );
 }
