@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
+import CustomHelmet from "../components/CustomHelmet";
 import { verifyEmail } from "../services/authApi";
 import { useTranslation } from "react-i18next";
 

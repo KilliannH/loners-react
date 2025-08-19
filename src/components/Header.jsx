@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useAuthStore } from "../features/auth/authStore";
-import toast from "react-hot-toast";
+import {  Link } from "react-router-dom";
 import logo from "../assets/logo_inverted.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -17,21 +15,11 @@ import {
 } from "lucide-react";
 
 const Header = () => {
-    const isAuthenticated = useAuthStore((state) => !!state.token);
-    const logout = useAuthStore((state) => state.logout);
-    const navigate = useNavigate();
     const { i18n, t } = useTranslation();
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
     const [legalOpen, setLegalOpen] = useState(false);
-
-    const handleLogout = () => {
-        logout();
-        toast.success(t("auth.logoutSuccess"));
-        setMenuOpen(false);
-        navigate("/login");
-    };
 
     const handleLanguageSelect = (lang) => {
         i18n.changeLanguage(lang);
@@ -83,31 +71,6 @@ const Header = () => {
 
                             <div className="space-y-4">
 
-                                {/* 🔗 Navigation principale */}
-                                <div className="flex flex-col gap-3 text-sm">
-                                    <Link
-                                        to="/home"
-                                        className="flex items-center gap-2 text-gray-800 hover:text-blue-600 transition"
-                                        onClick={() => setMenuOpen(false)}
-                                    >
-                                        <Home size={18} /> {t("nav.home") || "Accueil"}
-                                    </Link>
-                                    <Link
-                                        to="/profile"
-                                        className="flex items-center gap-2 text-gray-800 hover:text-blue-600 transition"
-                                        onClick={() => setMenuOpen(false)}
-                                    >
-                                        <User size={18} /> {t("nav.profile") || "Profil"}
-                                    </Link>
-                                    <Link
-                                        to="/chat"
-                                        className="flex items-center gap-2 text-gray-800 hover:text-blue-600 transition"
-                                        onClick={() => setMenuOpen(false)}
-                                    >
-                                        <MessageSquare size={18} /> {t("nav.chat") || "Chat"}
-                                    </Link>
-                                </div>
-
                                 {/* 🌐 Langues — collapsible */}
                                 <div className="text-sm text-gray-800">
                                     <button
@@ -127,7 +90,6 @@ const Header = () => {
                                             >
                                                 <button onClick={() => handleLanguageSelect("fr")}>🇫🇷</button>
                                                 <button onClick={() => handleLanguageSelect("en")}>🇬🇧</button>
-                                                <button onClick={() => handleLanguageSelect("es")}>🇪🇸</button>
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
@@ -175,24 +137,6 @@ const Header = () => {
                                         )}
                                     </AnimatePresence>
                                 </div>
-
-                                {/* 🚪 Déconnexion */}
-                                {isAuthenticated ? (
-                                    <button
-                                        onClick={handleLogout}
-                                        className="flex items-center gap-2 text-sm text-red-600 hover:text-red-800 transition"
-                                    >
-                                        <LogOut size={18} /> {t("auth.logout")}
-                                    </button>
-                                ) : (
-                                    <Link
-                                        to="/login"
-                                        onClick={() => setMenuOpen(false)}
-                                        className="flex items-center gap-2 text-sm text-gray-800 hover:text-blue-600 transition"
-                                    >
-                                        <LogOut size={18} /> {t("auth.login")}
-                                    </Link>
-                                )}
                             </div>
                         </motion.div>
                     </>

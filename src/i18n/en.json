@@ -1,241 +1,13 @@
 {
-    "chatRooms": {
-        "title": "My chat rooms",
-        "loading": "Loading...",
-        "noRooms": "No rooms available.",
-        "unreadMessages": "{{count}} unread message",
-        "unreadMessages_plural": "{{count}} unread messages",
-        "seo": {
-            "title": "My chat rooms - Loners",
-            "description": "Find all your chat rooms linked to the events you've joined on Loners."
-        }
-    },
-    "chatRoom": {
-        "seo": {
-            "title": "Chat - Loners",
-            "description": "Chat in real-time with event participants and start connecting even before you meet."
-        }
-    },
-    "createEvent": {
-        "title": "Create an Event",
-        "fields": {
-            "name": "Name",
-            "description": "Description",
-            "type": "Type",
-            "date": "Date",
-            "location": "Location",
-            "selectLocation": "Selected location:",
-            "cancelSelection": "cancel"
-        },
-        "types": {
-            "concert": "Concert",
-            "spectacle": "Show",
-            "expo": "Exhibition",
-            "festival": "Festival",
-            "soiree_a_theme": "Themed party",
-            "autre": "Other"
-        },
-        "status": {
-            "loading": "Creating...",
-            "submit": "Create event"
-        },
-        "toast": {
-            "locationRequired": "You must choose a location!",
-            "created": "Event created 🎉",
-            "createError": "Error while creating event",
-            "locationSearchError": "Error while searching for locations",
-            "locationExists": "Existing location selected",
-            "locationCreated": "Location “{{name}}” added and selected",
-            "locationInvalid": "Could not validate this location",
-            "locationReset": "Selection canceled",
-            "pastDateError": "The event date cannot be in the past."
-        },
-        "seo": {
-            "title": "Create an event - Loners",
-            "description": "Host your own event in just a few clicks."
-        }
-    },
-    "editEvent": {
-        "seo": {
-            "title": "Edit an event - Loners",
-            "description": "Update your event details easily and manage your community"
-        }
-    },
-    "eventDetail": {
-        "loading": "Loading...",
-        "notFound": "Event not found",
-        "back": "Back",
-        "type": "Type",
-        "date": "Date",
-        "attendees": "attendees",
-        "join": "Join",
-        "leave": "Leave",
-        "goToChat": "View discussion",
-        "edit": "Edit event",
-        "delete": "Delete event",
-        "confirmDelete": "Delete this event? This action is irreversible.",
-        "at": "at",
-        "toast": {
-            "left": "You have left the event.",
-            "joined": "You have joined the event.",
-            "joinError": "Failed to join the event.",
-            "leaveError": "Failed to leave the event.",
-            "deleted": "Event deleted.",
-            "deleteError": "Error while deleting the event.",
-            "loadError": "Error loading the event.",
-            "notFound": "Event not found.",
-            "updated": "Event updated.",
-            "updateError": "Error while updating the event."
-        },
-        "seo": {
-            "title": "Event details - Loners",
-            "description": "View an event’s info, join it, access the chat, and see who’s attending."
-        }
-    },
-    "home": {
-        "greeting": "Hi {{username}}",
-        "subtitle": "Here's what's happening near you",
-        "filters": {
-            "all": "All types"
-        },
-        "refreshPosition": "Refresh my position",
-        "noEvents": "No events found nearby.",
-        "attendees": "attendee(s)",
-        "createEvent": "Create an event",
-        "totalFound": "{{count}} event(s) found",
-        "toast": {
-            "geolocError": "Couldn't get your position 📍",
-            "geolocRefreshError": "Unable to get location",
-            "fetchError": "Error fetching events"
-        },
-        "seo": {
-            "title": "Nearby events - Loners",
-            "description": "Discover concerts, festivals, and parties around you with Loners. Filter by type and explore the map."
-        }
-    },
-    "profile": {
-        "edit": "Edit my profile",
-        "createdEvents": "Created events",
-        "joinedEvents": "Joined events",
-        "noCreated": "You haven’t created any events yet.",
-        "noJoined": "You’re not participating in any events.",
-        "attendees": "attendee(s)",
-        "toast": {
-            "fetchError": "Failed to load your events"
-        },
-        "seo": {
-            "title": "My profile - Loners",
-            "description": "Access your profile, see your created or joined events, and manage your Loners experience."
-        }
-    },
-    "updateProfile": {
-        "title": "My Profile",
-        "fields": {
-            "username": "Username",
-            "avatarUrl": "Avatar URL",
-            "bio": "Tell us a little about yourself (100 characters max)"
-        },
-        "status": {
-            "loading": "Updating...",
-            "submit": "Update"
-        },
-        "toast": {
-            "success": "Profile updated!",
-            "error": "Error while updating profile"
-        },
-        "seo": {
-            "title": "Edit my profile - Loners",
-            "description": "Update your username or avatar to personalize your Loners profile."
-        }
-    },
-    "userProfile": {
-        "title": "Profile",
-        "upcommingEvents": "Upcoming Events",
-        "pastEvents": "Recent Past Events",
-        "meta": {
-            "descriptionFirstPart": "User profile of",
-            "descriptionSecondPart": "on"
-        },
-        "loading": "Loading...",
-        "toast": {
-            "fetchUserError": "Failed to load user."
-        }
-    },
-    "map": {
-        "loading": "Loading map...",
-        "invalid_coordinates": "Invalid coordinates"
-    },
-    "register": {
-        "title": "Create an account",
-        "fields": {
-            "username": "Username",
-            "email": "Email",
-            "password": "Password"
-        },
-        "placeholders": {
-            "username": "loner42",
-            "email": "loner@email.com",
-            "password": "********"
-        },
-        "submit": "Sign up",
-        "already": "Already have an account?",
-        "login": "Log in",
-        "or": "or",
-        "toast": {
-            "success": "Registration successful 🎉",
-            "error": "Registration error"
-        },
-        "seo": {
-            "title": "Sign Up - Loners",
-            "description": "Join Loners to attend nearby events and chat with other participants."
-        }
-    },
-    "login": {
-        "title": "Login",
-        "fields": {
-            "email": "Email",
-            "password": "Password"
-        },
-        "placeholders": {
-            "email": "your.email@email.com",
-            "password": "********"
-        },
-        "or": "or",
-        "submit": "Log in",
-        "noAccount": "Don't have an account?",
-        "register": "Create an account",
-        "toast": {
-            "success": "Successfully logged in 👋",
-            "error": "Login error, please try again"
-        },
-        "seo": {
-            "title": "Login - Loners",
-            "description": "Log in to your Loners account to view your events and chat rooms."
-        }
-    },
-    "header": {
-        "logout": "Logout",
-        "toast": {
-            "logoutSuccess": "Successfully logged out"
-        }
-    },
-    "googlePlacesInput": {
-        "placeholder": "Search for a place..."
-    },
-    "chat": {
-        "inputPlaceholder": "Write a message...",
-        "send": "Send",
-        "unknown": "Unknown",
-        "errors": {
-            "fetch": "Error loading chat"
-        }
-    },
     "nav": {
         "home": "Home",
         "chat": "Chat",
         "profile": "Profile",
         "menu": "Menu",
         "legal": "Legal"
+    },
+    "auth": {
+        "language": "Language"
     },
     "legal": {
         "terms": "Terms and Conditions",
@@ -248,51 +20,62 @@
         "cookies.seo.title": "Cookie Policy - Loners",
         "cookies.seo.description": "Find out how cookies are used on Loners and how to disable them."
     },
-    "auth": {
-        "logout": "Logout",
-        "login": "Login",
-        "logoutSuccess": "Successfully logged out",
-        "language": "Language"
-    },
     "common": {
         "cancel": "Cancel",
         "pastEvent": "Past Event"
     },
-    "legal.content": "**Site Editor**  \nLoners, published by Killiann Hervagault  \nAddress: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nEmail: support@loners.net  \nPublication director: Killiann Hervagault\n\n**Hosting**  \nThis site is hosted by Google Cloud Platform (GCP)  \nAddress: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irelande  \n\n**Intellectual Property**  \nAll content on this site (texts, images, logos, etc.) is the exclusive property of Loners unless otherwise stated.\n\n**Disclaimer**  \nLoners cannot be held liable for any direct or indirect damage caused to the user's device when accessing the site.",
+    "legal.content": "**Site Editor**  \nLoners, published by Killiann Hervagault  \nAddress: 3, Rue des oiseaux 44240 La Chapelle sur Erdre  \nEmail: support@loners.net  \nPublication director: Killiann Hervagault\n\n**Hosting**  \nThis site is hosted by Vercel  \nAddress: 650 California St, San Francisco, CA 94108, United States  \n\n**Intellectual Property**  \nAll content on this site (texts, images, logos, etc.) is the exclusive property of Loners unless otherwise stated.\n\n**Disclaimer**  \nLoners cannot be held liable for any direct or indirect damage caused to the user's device when accessing the site.",
     "terms.content": "### 1. Purpose\nThese terms govern the use of the Loners platform by its users.\n\n### 2. Access to the service\nThe service is available for free with limited features. A subscription unlocks all features.\n\n### 3. User account\nThe user is responsible for the information provided and the confidentiality of their account.\n\n### 4. Personal data\nData is processed in accordance with our privacy policy. No data is shared with third parties without consent.\n\n### 5. Termination\nUsers may cancel their subscription at any time from their account page.\n\n### 6. Modifications\nLoners reserves the right to update these terms at any time.",
     "privacy.content": "**Last updated: July 30, 2025**\n\n## 1. Data Collected\nWe collect the information you provide when registering (first name, last name, email), and data related to your use of the service (events, preferences, payments).\n\n## 2. Use of Data\nYour data is used only to:\n- Provide the Loners service\n- Improve the user experience\n- Manage payments and access\n\n## 3. Storage and Security\nYour data is stored securely and never sold. We use industry-standard security tools.\n\n## 4. Your Rights\nIn accordance with GDPR, you can request access to, modification, or deletion of your data at any time by contacting us at **support@loners.net**.\n\n## 5. Cookies\nLoners uses cookies to:\n- Improve navigation\n- Measure site traffic\nYou can disable cookies via your browser settings.\n\n## 6. Contact\nFor any questions about this policy, please reach out to:\n**support@loners.net**",
+    "downloadModal": {
+        "title": "Download Loners",
+        "subtitle": "Available on iOS and Android",
+        "download1Part1": "Download on",
+        "download1Part2": "App Store",
+        "download2Part1": "Available on",
+        "download2Part2": "Google Play",
+        "labels": "Free • No ads • Secure"
+    },
     "landing": {
-        "hero": {
-            "title": "Meet, chat, and join events.",
-            "subtitle": "Loners connects you with nearby events and the people attending them.",
-            "cta": "Join Loners"
+        "feature1": {
+            "title": "Find people near you",
+            "desc": "Connect with like-minded people in your area"
         },
-        "subhero": {
-            "title": "Join events that match your vibe",
-            "subtitle": "On Loners, discover events around your interests and chat with participants even before meeting them."
+        "feature2": {
+            "title": "Secure and private chat",
+            "desc": "Entertain securely with end-to-end encrypted messaging"
+        },
+        "feature3": {
+            "title": "Organize events",
+            "desc": "Create and Join local events to meet new people"
+        },
+        "hero": {
+            "badge": "The next generation of dating",
+            "titlePart1": "Connect",
+            "titlePart2": "Authentic",
+            "subtitle": "Discover authentic people near you. Create real connections in a safe and supportive environment.",
+            "cta": "Download now"
+        },
+        "appPreview": {
+            "titlePart1": "A reimagined experience",
+            "titlePart2": "innovative",
+            "subtitle": "Intuitive interface, authentic conversations and meaningful encounters. Discover all the features that make Loners unique"
         },
         "features": {
-            "title": "Why choose Loners?",
-            "nearby": {
-                "title": "Nearby Events",
-                "desc": "Instantly discover events around you using geolocation."
-            },
-            "chat": {
-                "title": "Private Chat Rooms",
-                "desc": "Connect with other attendees before the event through dedicated chats."
-            },
-            "organize": {
-                "title": "Create Your Own Event",
-                "desc": "Easily organize a concert, a themed night, or a picnic in a few clicks."
-            }
+            "titlePart1": "Features",
+            "titlePart2": "innovative",
+            "subtitle": "Discover all the features that make Loners unique"
         },
-        "preview": {
-            "title": "A glimpse into the app",
-            "description": "Intuitive navigation, interactive maps, and real-time chat."
+        "screenshots": {
+            "title": "Discover the app",
+            "subtitle": "A sneak peek at your next social experience"
         },
-        "cta": {
-            "title": "Ready to get started?",
-            "button": "Create a free account"
+        "finalCTA": {
+            "titlePart1": "Ready to start",
+            "titlePart2": "your adventure?",
+            "subtitle": "Join thousands of people who have already found their community",
+            "button": "Download for free",
+            "labels": "Available on iOS and Android • Free • Ad-free"
         },
         "seo": {
             "title": "Loners – Local events & early access chat",
@@ -324,5 +107,10 @@
         "sent": "Email sent.",
         "error": "Failed to send the email.",
         "emailRequired": "Email is required"
+    },
+    "footer": {
+        "legalTerms": "Legal Terms",
+        "privacyPolicy": "Privacy Policy",
+        "cookiePolicy": "Cookie Policy"
     }
 }
